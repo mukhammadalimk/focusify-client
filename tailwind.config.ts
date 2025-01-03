@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: "375px",
+        md: "768px",
+        lg: "1200px",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
