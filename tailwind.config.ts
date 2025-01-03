@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        playfair: ["var(--font-playfair)", "serif"],
+        urbanist: ["var(--font-urbanist)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
+      },
     },
   },
   plugins: [],

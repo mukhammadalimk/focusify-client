@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --font-playfair: "Playfair Display", serif;
+  --font-urbanist: "Urbanist", sans-serif;
+  --font-roboto: "Roboto Flex", sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-urbanist); /* Default font */
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
