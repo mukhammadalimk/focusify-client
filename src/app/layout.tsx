@@ -37,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay.variable} ${urbanist.variable} ${robotoFlex.variable} antialiased`}
       >
-        <div className="min-h-[100vh] grid place-items-center md:py-3">
+        <div className="min-h-[100vh] grid place-items-center">
           <IpadWrapper>{children}</IpadWrapper>
         </div>
       </body>

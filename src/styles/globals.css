@@ -2,42 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default Light Theme */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #212121;
 
   --font-playfair: "Playfair Display", serif;
   --font-urbanist: "Urbanist", sans-serif;
   --font-roboto: "Roboto Flex", sans-serif;
 }
 
-@media (prefers-color-scheme: light) {
+/* Dark Theme */
+[data-theme="dark"] {
+  --background: #181a20;
+  --foreground: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #181a20;
+    --foreground: #fff;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
+  transition: background-color 0.3s, color 0.3s;
   font-family: var(--font-urbanist); /* Default font */
   min-height: 100vh;
   width: 100vw;
 }
 
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-}
-
 @layer components {
   .ipad-pro-container {
-    @apply w-full h-full md:max-w-[700px] md:border-[3px] md:border-[#A7B5B9] md:rounded-[45px] md:shadow-lg md:overflow-hidden bg-white;
+    @apply w-full h-full md:max-h-[900px] md:max-w-[700px] md:border-[3px] md:border-[#A7B5B9] dark:md:border-[#35383f] md:rounded-[45px] md:shadow-lg md:overflow-hidden;
   }
 
   .ipad-pro {
-    @apply w-full h-full md:max-w-[697px] md:border-[20px] md:border-black md:rounded-[40px] md:shadow-lg overflow-hidden bg-white md:aspect-ratio;
+    @apply w-full h-full md:max-h-[897px] md:max-w-[697px] md:border-[20px] md:border-black md:rounded-[40px] md:shadow-lg overflow-hidden md:aspect-ratio;
   }
 
   .aspect-ratio {
