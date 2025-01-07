@@ -1,5 +1,5 @@
+import AuthButtons from "./AuthButtons";
 import LogoRed from "@/assets/icons/logo-red.svg";
-import AuthButtons from "./components/AuthButtons";
 import PrivacyAndTerms from "@/components/PrivacyAndTerms";
 import IntroTextsBox from "@/components/shared/IntroTextsBox";
 import SocialButtonsContainer from "../../components/shared/SocialButtonsContainer";
