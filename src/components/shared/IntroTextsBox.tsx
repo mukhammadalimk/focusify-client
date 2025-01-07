@@ -5,10 +5,10 @@ const IntroTextsBox = ({
 }: IntroTextsBoxProps) => {
   return (
     <div className={className}>
-      <h3 className="font-bold text-[32px] leading-[1.6] text-[#212121] dark:text-[#ffffff]">
+      <h3 className="font-bold sm:text-[32px] leading-[1.6] text-[#212121] dark:text-[#ffffff] xsm:text-[24px]">
         {mainText}
       </h3>
-      <p className="font-normal text-[18px] leading-[1.6] tracking-[0.2px] text-[#616161] dark:text-[#eee]">
+      <p className="font-normal sm:text-[18px] leading-[1.6] tracking-[0.2px] text-[#616161] dark:text-[#eee] xsm:text-[16px]">
         {subText}
       </p>
     </div>

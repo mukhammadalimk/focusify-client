@@ -1,11 +1,17 @@
 import ArrowLeftIcon from "@/assets/icons/arrow-left.svg";
+import { twMerge } from "tailwind-merge";
 
-const BackIconBox = ({ link }: { link: string }) => {
+const BackIconBox = ({ link, className }: BackIconBox) => {
   return (
-    <a href={link} className="mt-2">
+    <a href={link} className={twMerge("mt-4", className)}>
       <ArrowLeftIcon className="fill-[#212121] dark:fill-[#fff] cursor-pointer" />
     </a>
   );
 };
+
+interface BackIconBox {
+  link: string;
+  className?: string;
+}
 
 export default BackIconBox;

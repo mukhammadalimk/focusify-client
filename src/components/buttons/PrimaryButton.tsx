@@ -6,6 +6,7 @@ const PrimaryButton = ({
   className,
   link,
   onClick,
+  disabled = false,
 }: PrimaryButtonProps) => {
   return (
     <button
@@ -14,6 +15,7 @@ const PrimaryButton = ({
         className
       )}
       onClick={onClick}
+      disabled={disabled}
     >
       <a
         href={link}
@@ -31,6 +33,7 @@ interface PrimaryButtonProps {
   className?: string;
   link?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 export default PrimaryButton;
