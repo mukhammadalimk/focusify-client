@@ -1,15 +1,19 @@
 import SocialButtonsContainer from "@/components/shared/SocialButtonsContainer";
 
-const BottomSection = () => {
+type PageType = "login" | "signup";
+
+const BottomSection = ({ type }: { type: PageType }) => {
   return (
     <>
       <p className="font-normal text-[18px] leading-[1.6] tracking-[0.2px] text-[#212121] dark:text-[#ffffff] text-center mt-6">
-        Already have an account?
+        {type === "login"
+          ? "Don't have an account?"
+          : "Already have an account?"}
         <a
-          href="/login"
+          href={`/${type === "login" ? "signup" : "login"}`}
           className="font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#FF6347] ml-2"
         >
-          Log in
+          {type === "login" ? "Sign up" : "Log in"}
         </a>
       </p>
 

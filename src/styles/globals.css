@@ -2,26 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Default Light Theme */
-:root {
-  --background: #ffffff;
-  --foreground: #212121;
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #212121;
 
-  --font-playfair: "Playfair Display", serif;
-  --font-urbanist: "Urbanist", sans-serif;
-  --font-roboto: "Roboto Flex", sans-serif;
-}
+    --font-playfair: "Playfair Display", serif;
+    --font-urbanist: "Urbanist", sans-serif;
+    --font-roboto: "Roboto Flex", sans-serif;
+  }
 
-/* Dark Theme */
-[data-theme="dark"] {
-  --background: #181a20;
-  --foreground: #fff;
+  .input-autofill:-webkit-autofill {
+    /* Light theme */
+    box-shadow: 0 0 0px 100px #fafafa inset;
+    -webkit-box-shadow: 0 0 0 10000px #fafafa inset;
+    color: #212121;
+    -webkit-text-fill-color: #212121;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #181a20;
     --foreground: #fff;
+  }
+
+  .input-autofill:-webkit-autofill {
+    /* Dark theme */
+    box-shadow: 0 0 0px 100px #1f222a inset;
+    -webkit-box-shadow: 0 0 0 100px #1f222a inset;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
   }
 }
 
@@ -46,20 +57,4 @@ body {
   .aspect-ratio {
     aspect-ratio: 3 / 4;
   }
-}
-
-.input-autofill:-webkit-autofill {
-  /* Light theme */
-  box-shadow: 0 0 0px 100px #fafafa inset;
-  -webkit-box-shadow: 0 0 0 10000px #fafafa inset;
-  color: #212121;
-  -webkit-text-fill-color: #212121;
-}
-
-.dark .input-autofill:-webkit-autofill {
-  /* Dark theme */
-  box-shadow: 0 0 0px 100px #1f222a inset;
-  -webkit-box-shadow: 0 0 0 100px #1f222a inset;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
 }

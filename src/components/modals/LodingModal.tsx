@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ModalBackdrop from "./ModalBackdrop";
-import LoadingIcon from "@/assets/icons/loading.svg";
+import LoadingIcon from "@/assets/icons/loading-white.svg";
 
 const LodingModal = ({ isModalOpen, text }: LodingModalProps) => {
   return (

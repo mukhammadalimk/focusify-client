@@ -22,6 +22,10 @@ export default {
         urbanist: ["var(--font-urbanist)", "sans-serif"],
         roboto: ["var(--font-roboto)", "sans-serif"],
       },
+      borderWidth: {
+        DEFAULT: "1px",
+        "3": "3px",
+      },
     },
   },
   plugins: [],

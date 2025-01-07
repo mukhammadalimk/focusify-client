@@ -1,8 +1,8 @@
-import MainSection from "./components/MainSection";
-import BottomSection from "./components/BottomSection";
 import BackIconBox from "@/components/shared/BackIconBox";
 import PrivacyAndTerms from "@/components/PrivacyAndTerms";
 import IntroTextsBox from "@/components/shared/IntroTextsBox";
+import BottomSection from "../signup/components/BottomSection";
+import MainSection from "./components/MainSection";
 
 const Signup = () => {
   return (
@@ -11,14 +11,14 @@ const Signup = () => {
 
       <section className="flex-1 flex flex-col justify-center">
         <IntroTextsBox
-          mainText="Join Focusify Today 👤"
-          subText="Unlock Your Productivity Potential!"
+          mainText="Welcome Back! 👋"
+          subText="Let's Get Back to Productivity"
           className="text-center mb-8 mt-6"
         />
 
         <MainSection />
 
-        <BottomSection type="signup" />
+        <BottomSection type="login" />
       </section>
 
       <PrivacyAndTerms />

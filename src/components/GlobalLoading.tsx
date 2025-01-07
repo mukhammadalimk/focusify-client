@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Logo from "@/assets/icons/logo.svg";
-import LoadingIcon from "@/assets/icons/loading.svg";
+import LoadingIcon from "@/assets/icons/loading-red.svg";
 import { usePathname } from "next/navigation";
 
 const user = false;

@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Focusify | The Best",
   description:
     "Pomodoro and Task Management app developed by Muhammadali with love.",
+  icons: {
+    icon: "/assets/logo-red.svg",
+  },
 };
 
 export default function RootLayout({

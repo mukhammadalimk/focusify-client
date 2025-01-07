@@ -3,16 +3,22 @@ import EmailIcon from "@/assets/icons/email.svg";
 import LockIcon from "@/assets/icons/lock.svg";
 import EyeIcon from "@/assets/icons/eye.svg";
 import EyeOffIcon from "@/assets/icons/eye-off.svg";
+import NameIcon from "@/assets/icons/profile.svg";
 
 export enum IconName {
   Email = "email",
   Lock = "lock",
   Eye = "eye",
   EyeOff = "eyeOff",
+  Name = "name",
 }
 
 const getIcon = (iconName: IconName) => {
   switch (iconName) {
+    case IconName.Name:
+      return (
+        <NameIcon className="fill-[#212121] dark:fill-[#fff] absolute bottom-[22px] w-5 h-[21px] left-5" />
+      );
     case IconName.Email:
       return (
         <EmailIcon className="fill-[#212121] dark:fill-[#fff] absolute bottom-[22px] left-5" />
@@ -67,7 +73,7 @@ const Input = ({
           className="absolute right-5 bottom-[22px] w-5 h-[21px] cursor-pointer"
           onClick={() => setPasswordShown?.(!passwordShown)}
         >
-          {passwordShown ? getIcon(IconName.EyeOff) : getIcon(IconName.Eye)}
+          {passwordShown ? getIcon(IconName.Eye) : getIcon(IconName.EyeOff)}
         </div>
       )}
     </div>
