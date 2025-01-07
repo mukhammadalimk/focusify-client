@@ -1,7 +1,8 @@
 import LogoRed from "@/assets/icons/logo-red.svg";
 import AuthButtons from "./components/AuthButtons";
 import PrivacyAndTerms from "@/components/PrivacyAndTerms";
-import SocialButtonsContainer from "./components/SocialButtonsContainer";
+import IntroTextsBox from "@/components/shared/IntroTextsBox";
+import SocialButtonsContainer from "../../components/shared/SocialButtonsContainer";
 
 const Welcome = () => {
   return (
@@ -11,14 +12,11 @@ const Welcome = () => {
       </div>
 
       <div className="flex flex-col gap-8">
-        <div className="flex flex-col items-center gap-2.5">
-          <h3 className="font-bold text-[32px] leading-[1.6] text-[#212121] dark:text-[#ffffff] sm:text-[24px]">
-            Let&apos;s Get Started
-          </h3>
-          <p className="font-normal text-[18px] leading-[1.6] tracking-[0.2px] text-[#616161] dark:text-[#eee]">
-            Let&apos;s dive in into your account
-          </p>
-        </div>
+        <IntroTextsBox
+          mainText="Let's Get Started"
+          subText="Let's dive in into your account"
+          className="flex flex-col items-center gap-2.5"
+        />
 
         <SocialButtonsContainer />
 
