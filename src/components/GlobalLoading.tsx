@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Logo from "@/assets/icons/logo.svg";
-import LoadingIcon from "@/assets/icons/loading-red.svg";
+import LoadingIcon from "@/assets/icons/loading-white.svg";
 import { usePathname } from "next/navigation";
 
-const user = false;
+const user = true;
 
 const GlobalLoading = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);

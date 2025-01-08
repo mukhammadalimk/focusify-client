@@ -10,7 +10,7 @@ const ForgotPassword = () => {
 
       <div className="flex flex-col items-center px-3 md:px-4 mb-24">
         <IntroTextsBox
-          mainText="Forgot Your Password? 🔑 "
+          mainText="Forgot Your Password? 🔑"
           subText="No worries, we'll help you reset it. Please enter the email associated with your Focusify account."
           className="text-left mb-8 mt-6 max-w-[400px]"
         />
