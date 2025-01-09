@@ -30,7 +30,7 @@ const GlobalLoading = ({ children }: { children: React.ReactNode }) => {
       <div className="bg-[#ff6347] h-full flex items-center justify-center relative">
         <div className="w-max text-center mb-[90px]">
           <Logo className="h-[200px] w-[200px]" />
-          <h2 className="font-semibold text-white text-5xl mt-7">Focusify</h2>
+          <h1 className="font-semibold text-white text-5xl mt-7">Focusify</h1>
         </div>
 
         <div className="absolute bottom-20">
