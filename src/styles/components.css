@@ -1,0 +1,23 @@
+@tailwind components;
+
+@layer components {
+  .ipad-pro-container {
+    @apply w-full h-full md:max-h-[900px] md:max-w-[700px] md:border-[3px] md:border-[#A7B5B9] dark:md:border-[#35383f] md:rounded-[45px] md:shadow-lg md:overflow-hidden;
+  }
+
+  .ipad-pro {
+    @apply w-full h-full md:max-h-[897px] md:max-w-[697px] md:border-[20px] md:border-black md:rounded-[40px] md:shadow-lg overflow-hidden md:aspect-ratio;
+  }
+
+  .aspect-ratio {
+    aspect-ratio: 3 / 4;
+  }
+
+  .tag-text {
+    @apply font-normal text-[14px] break_500:text-[17px] break_600:text-[19px] leading-[1] tracking-[0.2px];
+  }
+
+  .panel-wrapper {
+    @apply bg-white dark:bg-[#181A20] w-full rounded-tl-3xl rounded-tr-3xl px-3 md:px-4 pt-2 fixed bottom-0 left-0 z-[150] flex flex-col;
+  }
+}

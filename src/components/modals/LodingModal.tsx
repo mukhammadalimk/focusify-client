@@ -5,7 +5,7 @@ import LoadingIcon from "@/assets/icons/loading-red.svg";
 
 const LodingModal = ({ isModalOpen, text }: LodingModalProps) => {
   return (
-    <ModalBackdrop isOpen={isModalOpen}>
+    <ModalBackdrop isOpen={isModalOpen} containerId="home-root">
       <motion.div
         className="bg-white dark:bg-[#1F222A] max-w-[440px] min-w-[340px] rounded-xl p-8 text-center z-55"
         initial={{ scale: 0.8, opacity: 0 }}

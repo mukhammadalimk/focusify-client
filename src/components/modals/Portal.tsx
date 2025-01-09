@@ -3,32 +3,32 @@ import { createPortal } from "react-dom";
 
 interface PortalProps {
   children: ReactNode;
+  containerId: string;
 }
 
-const Portal: React.FC<PortalProps> = ({ children }) => {
-  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
+const Portal: React.FC<PortalProps> = ({ children, containerId }) => {
+  const [container, setContainer] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Create modal root dynamically
-    let modalRoot = document.getElementById("modal-root");
-    if (!modalRoot) {
-      modalRoot = document.createElement("div");
-      modalRoot.id = "modal-root";
-      document.body.appendChild(modalRoot);
+    // Check if the container already exists
+    let portalContainer = document.getElementById(containerId);
+
+    if (!portalContainer) {
+      // If it doesn't exist, create and append it
+      portalContainer = document.createElement("div");
+      portalContainer.id = containerId;
+      portalContainer.classList.add("flex", "z-[200]"); // Add necessary classes
+      document.body.appendChild(portalContainer);
     }
-    setPortalRoot(modalRoot);
 
-    // Clean up when unmounting
-    return () => {
-      if (modalRoot) {
-        document.body.removeChild(modalRoot);
-      }
-    };
-  }, []);
+    setContainer(portalContainer);
 
-  if (!portalRoot) return null; // Avoid calling createPortal until portalRoot is set
+    // No cleanup needed since the container remains in the DOM
+  }, [containerId]);
 
-  return createPortal(children, portalRoot);
+  if (!container) return null;
+
+  return createPortal(children, container);
 };
 
 export default Portal;

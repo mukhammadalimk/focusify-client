@@ -9,9 +9,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        xsm: "315px",
-        break_360: "360px",
-        sm: "400px",
+        sm: "360px",
+        break_400: "400px",
         break_500: "500px",
         break_600: "600px",
         break_700: "700px",

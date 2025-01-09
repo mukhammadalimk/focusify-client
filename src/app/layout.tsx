@@ -43,6 +43,8 @@ export default function RootLayout({
         <div className="min-h-[100vh] grid place-items-center">
           <IpadWrapper>{children}</IpadWrapper>
         </div>
+
+        <div id="home-root"></div>
       </body>
     </html>
   );

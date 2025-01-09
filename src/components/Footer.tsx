@@ -15,11 +15,11 @@ const Footer = () => {
   const [active, setActive] = useState<FooterItemTitle>("Pomodoro");
 
   return (
-    <div className="w-full h-[70px] border-t border-[#F5F5F5] dark:border-[#35383F] flex items-center z-10">
+    <div className="bg-white dark:bg-[#181A20] w-full h-[70px] border-t border-[#F5F5F5] dark:border-[#35383F] flex items-center z-10 absolute bottom-0">
       <div className="w-full flex justify-evenly items-center">
         {footerItems.map((item) => (
           <div
-            className="flex flex-col gap-[2px] cursor-pointer transition-all transform active:scale-[0.97] will-change-transform w-[55px] sm:w-[70px]  text-center"
+            className="flex flex-col gap-[2px] cursor-pointer transition-all transform active:scale-[0.97] will-change-transform w-[55px] break_400:w-[70px]  text-center"
             key={item.title}
             onClick={() => setActive(item.title)}
           >

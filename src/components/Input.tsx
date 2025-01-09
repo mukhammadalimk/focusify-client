@@ -4,6 +4,8 @@ import LockIcon from "@/assets/icons/lock.svg";
 import EyeIcon from "@/assets/icons/eye.svg";
 import EyeOffIcon from "@/assets/icons/eye-off.svg";
 import NameIcon from "@/assets/icons/profile.svg";
+import SearchIcon from "@/assets/icons/search-icon.svg";
+import { twMerge } from "tailwind-merge";
 
 export enum IconName {
   Email = "email",
@@ -11,6 +13,7 @@ export enum IconName {
   Eye = "eye",
   EyeOff = "eyeOff",
   Name = "name",
+  Search = "search",
 }
 
 const getIcon = (iconName: IconName) => {
@@ -35,6 +38,11 @@ const getIcon = (iconName: IconName) => {
       return (
         <EyeIcon className="fill-[#212121] dark:fill-[#fff] cursor-pointer w-5 h-[21px]" />
       );
+    case IconName.Search:
+      return (
+        <SearchIcon className="fill-[#BDBDBD] dark:fill-[#757575] absolute top-1/2 -translate-y-1/2 left-5" />
+      );
+
     default:
       return null;
   }
@@ -48,15 +56,26 @@ const Input = ({
   iconName,
   passwordShown,
   setPasswordShown,
+  withoutLabel,
+  inputStyle,
+  containerStyle,
 }: InputProps) => {
   return (
-    <div className="flex flex-col relative gap-2 w-full max-w-[400px]">
-      <label
-        htmlFor={id}
-        className="font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#212121] dark:text-[#ffffff] ml-[1px]"
-      >
-        {text}
-      </label>
+    <div
+      className={twMerge(
+        `flex flex-col relative gap-2 w-full max-w-[400px]`,
+        containerStyle
+      )}
+    >
+      {!withoutLabel && (
+        <label
+          htmlFor={id}
+          className="font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#212121] dark:text-[#ffffff] ml-[1px]"
+        >
+          {text}
+        </label>
+      )}
+
       {getIcon(iconName)}
       <input
         type={passwordShown && type === "password" ? "text" : type}
@@ -65,7 +84,10 @@ const Input = ({
         autoCapitalize="off"
         autoCorrect="off"
         placeholder={placeholder}
-        className="placeholder-[#9E9E9E] placeholder:font-normal font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#212121] dark:text-[#ffffff] bg-[#FAFAFA] dark:bg-[#1F222A] h-[65px] pl-[52px] pr-5 py-[18px] outline-none rounded-[10px] border border-[#EEEEEE] dark:border-[#35383F] input-autofill"
+        className={twMerge(
+          `placeholder-[#9E9E9E] placeholder:font-normal font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#212121] dark:text-[#ffffff] bg-[#FAFAFA] dark:bg-[#1F222A] h-[65px] pl-[52px] pr-5 py-[18px] outline-none rounded-[10px] border border-[#EEEEEE] dark:border-[#35383F] input-autofill`,
+          inputStyle
+        )}
       />
 
       {type === "password" && (
@@ -88,6 +110,9 @@ interface InputProps {
   iconName: IconName;
   passwordShown?: boolean;
   setPasswordShown?: (arg: boolean) => void;
+  withoutLabel?: boolean;
+  inputStyle?: string;
+  containerStyle?: string;
 }
 
 export default Input;

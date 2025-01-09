@@ -1,8 +1,6 @@
-import React from "react";
-
 import LogoSmallWhite from "@/assets/icons/logo-white-small.svg";
 import Notification from "@/assets/icons/notification.svg";
-import SelectTask from "@/components/SelectTask";
+import SelectTask from "@/components/select-task/SelectTask";
 import CircleTimer from "@/components/pomodoro/CircleTimer";
 
 const HomePage = () => {
@@ -17,7 +15,7 @@ const HomePage = () => {
         <Notification />
       </div>
 
-      <div className="mt-6 flex flex-col flex-1">
+      <div className="mt-6 flex flex-col flex-1 pb-[94px]">
         <SelectTask />
 
         <CircleTimer />
