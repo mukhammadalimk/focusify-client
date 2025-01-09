@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 const BackIconBox = ({ link, className }: BackIconBox) => {
   return (
-    <a href={link} className={twMerge("mt-4", className)}>
+    <a href={link} className={twMerge("mt-1", className)}>
       <ArrowLeftIcon className="fill-[#212121] dark:fill-[#fff] cursor-pointer" />
     </a>
   );

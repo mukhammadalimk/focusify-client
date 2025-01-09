@@ -2,7 +2,7 @@ import AuthButtons from "./AuthButtons";
 import LogoRed from "@/assets/icons/logo-red.svg";
 import PrivacyAndTerms from "@/components/PrivacyAndTerms";
 import IntroTextsBox from "@/components/shared/IntroTextsBox";
-import SocialButtonsContainer from "../../components/shared/SocialButtonsContainer";
+import SocialButtonsContainer from "../../../components/shared/SocialButtonsContainer";
 
 const Welcome = () => {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 const PrimaryButton = ({
@@ -7,6 +7,7 @@ const PrimaryButton = ({
   link,
   onClick,
   disabled = false,
+  icon,
 }: PrimaryButtonProps) => {
   return (
     <button
@@ -17,12 +18,10 @@ const PrimaryButton = ({
       onClick={onClick}
       disabled={disabled}
     >
-      <a
-        href={link}
-        className="w-full h-full flex items-center justify-center text-[18px] md:text-[22px]"
-      >
-        {text}
-      </a>
+      <span className="w-full h-full flex items-center justify-center text-[18px] md:text-[22px]">
+        {icon}
+        <a href={link}>{text}</a>
+      </span>
     </button>
   );
 };
@@ -34,6 +33,7 @@ interface PrimaryButtonProps {
   link?: string;
   onClick?: () => void;
   disabled?: boolean;
+  icon?: ReactNode;
 }
 
 export default PrimaryButton;

@@ -23,8 +23,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #181a20;
-    --foreground: #fff;
+    --background: #58595f;
+    --foreground: #ffffff;
   }
 
   .input-autofill:-webkit-autofill {
