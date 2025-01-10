@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ModalBackdrop from "./ModalBackdrop";
-import LoadingIcon from "@/assets/icons/loading-red.svg";
+import LoadingRedIcon from "../icons/LoadingRedIcon";
 
-const LodingModal = ({ isModalOpen, text }: LodingModalProps) => {
+const LoadingModal = ({ isModalOpen, text }: LoadingModalProps) => {
   return (
     <ModalBackdrop isOpen={isModalOpen} containerId="home-root">
       <motion.div
@@ -13,16 +13,16 @@ const LodingModal = ({ isModalOpen, text }: LodingModalProps) => {
         exit={{ scale: 0.8, opacity: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <LoadingIcon className="animate-spin mx-auto mb-6" />
-        <h5 className="font-semibold text-[20px] leading-[1.6]">{text}</h5>
+        <LoadingRedIcon className="animate-spin mx-auto mb-6" />
+        <h5 className="font-semibold header-5">{text}</h5>
       </motion.div>
     </ModalBackdrop>
   );
 };
 
-interface LodingModalProps {
+interface LoadingModalProps {
   isModalOpen: boolean;
   text: string;
 }
 
-export default LodingModal;
+export default LoadingModal;

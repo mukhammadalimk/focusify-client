@@ -1,11 +1,11 @@
 import React from "react";
-import EmailIcon from "@/assets/icons/email.svg";
-import LockIcon from "@/assets/icons/lock.svg";
-import EyeIcon from "@/assets/icons/eye.svg";
-import EyeOffIcon from "@/assets/icons/eye-off.svg";
-import NameIcon from "@/assets/icons/profile.svg";
-import SearchIcon from "@/assets/icons/search-icon.svg";
 import { twMerge } from "tailwind-merge";
+import EmailIcon from "./icons/EmailIcon";
+import NameIcon from "./icons/NameIcon";
+import SearchIcon from "./icons/SearchIcon";
+import EyeOffIcon from "./icons/EyeOffIcon";
+import LockIcon from "./icons/LockIcon";
+import EyeIcon from "./icons/EyeIcon";
 
 export enum IconName {
   Email = "email",
@@ -70,7 +70,7 @@ const Input = ({
       {!withoutLabel && (
         <label
           htmlFor={id}
-          className="font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#212121] dark:text-[#ffffff] ml-[1px]"
+          className="font-semibold text-[18px] leading-[1.6] tracking-[0.2px] ml-[1px]"
         >
           {text}
         </label>
@@ -85,7 +85,7 @@ const Input = ({
         autoCorrect="off"
         placeholder={placeholder}
         className={twMerge(
-          `placeholder-[#9E9E9E] placeholder:font-normal font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#212121] dark:text-[#ffffff] bg-[#FAFAFA] dark:bg-[#1F222A] h-[65px] pl-[52px] pr-5 py-[18px] outline-none rounded-[10px] border border-[#EEEEEE] dark:border-[#35383F] input-autofill`,
+          `placeholder-[#9E9E9E] placeholder:font-normal font-semibold body-x-large bg-[#FAFAFA] dark:bg-[#1F222A] h-[65px] pl-[52px] pr-5 py-[18px] outline-none rounded-[10px] border border-[#EEEEEE] dark:border-[#35383F] input-autofill`,
           inputStyle
         )}
       />

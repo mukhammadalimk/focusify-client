@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Input, { IconName } from "@/components/Input";
-import LodingModal from "@/components/modals/LodingModal";
+import LoadingModal from "@/components/modals/LoadingModal";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
 import RememberAndForgotPassword from "./RememberAndForgotPassword";
 
@@ -21,7 +21,7 @@ const MainSection = () => {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <LodingModal isModalOpen={isModalOpen} text="Logging you in..." />
+      <LoadingModal isModalOpen={isModalOpen} text="Logging you in..." />
 
       <Input
         type="email"

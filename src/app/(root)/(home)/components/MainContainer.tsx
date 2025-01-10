@@ -1,6 +1,6 @@
 "use client";
-import PrimaryButton from "../../../../components/buttons/PrimaryButton";
-import PlayIcon from "@/assets/icons/play.svg";
+import PlayIcon from "@/components/icons/PlayIcon";
+import PrimaryButton from "@/components/buttons/PrimaryButton";
 import PomodoroActionMenu from "./PomodoroActionMenu";
 import PomodoroTimer from "./PomodoroTimer";
 

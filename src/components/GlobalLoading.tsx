@@ -1,9 +1,8 @@
 "use client";
-
+import LogoIcon from "./icons/LogoIcon";
 import { useState, useEffect } from "react";
-import Logo from "@/assets/icons/logo.svg";
-import LoadingIcon from "@/assets/icons/loading-white.svg";
 import { usePathname } from "next/navigation";
+import LoadingWhiteIcon from "./icons/LoadingWhiteIcon";
 
 const user = true;
 
@@ -29,12 +28,12 @@ const GlobalLoading = ({ children }: { children: React.ReactNode }) => {
     return (
       <div className="bg-[#ff6347] h-full flex items-center justify-center relative">
         <div className="w-max text-center mb-[90px]">
-          <Logo className="h-[200px] w-[200px]" />
+          <LogoIcon className="h-[200px] w-[200px]" />
           <h1 className="font-semibold text-white text-5xl mt-7">Focusify</h1>
         </div>
 
         <div className="absolute bottom-20">
-          <LoadingIcon className="animate-spin" />
+          <LoadingWhiteIcon className="animate-spin" />
         </div>
       </div>
     );

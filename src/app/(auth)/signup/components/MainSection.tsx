@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Input, { IconName } from "@/components/Input";
-import LodingModal from "@/components/modals/LodingModal";
+import LoadingModal from "@/components/modals/LoadingModal";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
 
 const MainSection = () => {
@@ -20,7 +20,7 @@ const MainSection = () => {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <LodingModal isModalOpen={isModalOpen} text="Signing you up..." />
+      <LoadingModal isModalOpen={isModalOpen} text="Signing you up..." />
 
       <Input
         type="text"

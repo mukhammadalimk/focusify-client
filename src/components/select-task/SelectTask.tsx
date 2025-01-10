@@ -1,8 +1,8 @@
 "use client";
-import ArrowDown from "@/assets/icons/arrow-down.svg";
 import { useState } from "react";
 import TasksPanel from "./TasksPanel";
 import TaskSelected from "./TaskSelected";
+import ArrowDownIcon from "../icons/ArrowDownIcon";
 
 const taskSelected = false;
 
@@ -35,11 +35,11 @@ const SelectTask = () => {
           <TaskSelected taskTitle="Create UI/UX for pomodoro app" />
         ) : (
           <>
-            <span className="font-normal text-[18px] leading-[1.6] tracking-[0.2px] text-[#9E9E9E]">
+            <span className="font-normal body-x-large text-[#9E9E9E]">
               Select Task
             </span>
 
-            <ArrowDown className="fill-[#212121] dark:fill-white" />
+            <ArrowDownIcon className="fill-[#212121] dark:fill-white" />
           </>
         )}
       </div>

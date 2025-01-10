@@ -1,6 +1,6 @@
 import { TaskItemProps } from "./TaskItem";
-import CircleEmptyIcon from "@/assets/icons/circle-empty-icon.svg";
-import CircleCheckmark from "@/assets/icons//circle-checkmark.svg";
+import CircleEmptyIcon from "../icons/CircleEmptyIcon";
+import CircleCheckmarkIcon from "../icons/CircleCheckmarkIcon";
 
 const TaskTop = ({ taskTitle, completed }: TaskTopProps) => {
   return (
@@ -13,7 +13,7 @@ const TaskTop = ({ taskTitle, completed }: TaskTopProps) => {
         {taskTitle}
       </h6>
 
-      {completed ? <CircleCheckmark /> : <CircleEmptyIcon />}
+      {completed ? <CircleCheckmarkIcon /> : <CircleEmptyIcon />}
     </div>
   );
 };

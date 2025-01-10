@@ -5,7 +5,5 @@ const SuitcaseIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   <Suitcase {...props} />
 ));
 
-// display name for debugging
 SuitcaseIcon.displayName = "SuitcaseIcon";
-
 export default SuitcaseIcon;

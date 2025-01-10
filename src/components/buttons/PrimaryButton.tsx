@@ -12,13 +12,13 @@ const PrimaryButton = ({
   return (
     <button
       className={twMerge(
-        "h-[58px] rounded-full cursor-pointer w-full max-w-[400px] transition-all transform active:scale-[0.99] will-change-transform text-center text-[18px] font-bold tracking-[0.2px]",
+        "h-[58px] rounded-full cursor-pointer w-full max-w-[400px] transition-all transform active:scale-[0.98] will-change-transform text-center body-x-large md:text-[22px] font-bold ",
         className
       )}
       onClick={onClick}
       disabled={disabled}
     >
-      <span className="w-full h-full flex items-center justify-center text-[18px] md:text-[22px]">
+      <span className="w-full h-full flex items-center justify-center">
         {icon}
         <a href={link}>{text}</a>
       </span>

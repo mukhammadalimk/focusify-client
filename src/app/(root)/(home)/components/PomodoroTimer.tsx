@@ -69,10 +69,10 @@ const PomodoroTimer = ({ duration }: PomodoroTimerProps) => {
         </svg>
 
         <div className="text-center absolute">
-          <h1 className="font-bold text-[50px] break_400:text-[64px] transition-all duration-300 text-[#212121] dark:text-[#FFFFFF] leading-[1.2032]">
+          <h1 className="font-bold text-[56px] break_400:text-[64px] transition-all duration-300 leading-[1.2032]">
             {formatTime(remainingTime)}
           </h1>
-          <span className="font-normal text-[16px] break_400:text-[18px] transition-all duration-300 leading-[1.6] tracking-[0.2px] text-[#616161] dark:text-[#EEEEEE]">
+          <span className="font-normal body-x-large transition-all duration-300 text-[#616161] dark:text-[#EEEEEE]">
             1 of 4 sessions
           </span>
         </div>

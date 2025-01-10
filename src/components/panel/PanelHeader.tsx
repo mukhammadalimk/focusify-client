@@ -1,5 +1,5 @@
-import PlusIcon from "@/assets/icons/plus-icon.svg";
 import Divider from "../Divider";
+import PlusIcon from "../icons/PlusIcon";
 
 const PanelHeader = ({ title, withIcon }: PanelHeaderProps) => {
   return (
@@ -8,12 +8,12 @@ const PanelHeader = ({ title, withIcon }: PanelHeaderProps) => {
 
       <div className="w-full text-center">
         <div className="w-full h-full relative py-5">
-          <h4 className="text-[#212121] dark:text-[#FFFFFF] font-bold text-[20px] break_400:text-2xl leading-[1.6]">
+          <h4 className="font-bold text-[20px] break_400:text-2xl leading-[1.6]">
             {title}
           </h4>
 
           {withIcon && (
-            <PlusIcon className="absolute top-1/2 -translate-y-1/2 right-0 cursor-pointer transition-all transform active:scale-[0.97] will-change-transform " />
+            <PlusIcon className="absolute top-1/2 -translate-y-1/2 right-0 cursor-pointer transition-all transform active:scale-[0.98] will-change-transform" />
           )}
         </div>
 

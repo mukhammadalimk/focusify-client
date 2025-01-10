@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import VectorIcon from "@/assets/icons/vector.svg";
+import VectorIcon from "@/components/icons/VectorIcon";
 
 const RememberAndForgotPassword = () => {
   const [rememberMe, setRememberMe] = useState(false);
@@ -12,7 +12,7 @@ const RememberAndForgotPassword = () => {
   return (
     <div className="flex justify-between max-w-[400px] w-full mt-1">
       <label
-        className="relative font-semibold text-[18px] leading-[1.6] tracking-[0.2px] flex items-center gap-4 cursor-pointer"
+        className="relative font-semibold body-x-large flex items-center gap-4 cursor-pointer"
         onClick={toggleIcon}
       >
         <div
@@ -33,7 +33,7 @@ const RememberAndForgotPassword = () => {
 
       <a
         href="/forgot-password"
-        className="font-semibold text-[18px] leading-[1.6] tracking-[0.2px] text-[#ff6347] dark:text-[#ffffff] cursor-pointer"
+        className="font-semibold body-x-large text-[#ff6347] dark:text-[#ffffff] cursor-pointer"
       >
         Forgot Password?
       </a>

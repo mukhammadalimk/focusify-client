@@ -22,7 +22,7 @@ const TasksPanel = ({ isPanelOpen, onClose, height }: TasksPanelProps) => {
       />
 
       <div className="flex gap-4 items-center">
-        <span className="whitespace-nowrap font-semibold text-[16px] break_400:text-[18px] leading-[1.6] tracking-[0.2px] text-[#9E9E9E]">
+        <span className="whitespace-nowrap font-semibold text-[16px] break_400:text-[18px] body-x-large text-[#9E9E9E]">
           Today Tasks
         </span>
         <Divider />
