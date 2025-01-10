@@ -5,12 +5,11 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #ffffff;
-    --foreground: #212121;
-
     --font-playfair: "Playfair Display", serif;
     --font-urbanist: "Urbanist", sans-serif;
     --font-roboto: "Roboto Flex", sans-serif;
+    --background: #ffffff;
+    --foreground: #212121;
   }
 
   .input-autofill:-webkit-autofill {
@@ -24,7 +23,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #58595f;
+    --background: #47474a;
     --foreground: #ffffff;
   }
 

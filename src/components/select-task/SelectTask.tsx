@@ -4,7 +4,7 @@ import { useState } from "react";
 import TasksPanel from "./TasksPanel";
 import TaskSelected from "./TaskSelected";
 
-const taskSelected = true;
+const taskSelected = false;
 
 const SelectTask = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
@@ -28,9 +28,7 @@ const SelectTask = () => {
       />
 
       <div
-        className={`bg-[#FAFAFA] dark:bg-[#1F222A] px-5 py-[18px] rounded-[10px] flex justify-between items-center w-full max-w-[500px] mx-auto relative overflow-hidden h-[69px]${
-          taskSelected ? "" : " cursor-pointer"
-        }`}
+        className={`select-task${taskSelected ? "" : " cursor-pointer"}`}
         onClick={onOpenHandler}
       >
         {taskSelected ? (

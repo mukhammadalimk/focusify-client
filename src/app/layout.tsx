@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Urbanist, Roboto_Flex } from "next/font/google";
 import "@/styles/globals.css";
 import IpadWrapper from "@/components/IpadWrapper";
+import ThemeProvider from "@/context/ThemeProvider";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -40,11 +41,13 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay.variable} ${urbanist.variable} ${robotoFlex.variable} antialiased`}
       >
-        <div className="min-h-[100vh] grid place-items-center">
-          <IpadWrapper>{children}</IpadWrapper>
-        </div>
+        <ThemeProvider>
+          <div className="min-h-[100vh] grid place-items-center">
+            <IpadWrapper>{children}</IpadWrapper>
+          </div>
 
-        <div id="home-root"></div>
+          <div id="home-root"></div>
+        </ThemeProvider>
       </body>
     </html>
   );

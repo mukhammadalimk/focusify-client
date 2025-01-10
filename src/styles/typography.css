@@ -1,0 +1,47 @@
+@tailwind utilities;
+
+@layer utilities {
+  .header-1 {
+    @apply text-5xl leading-[1.6];
+  }
+
+  .header-2 {
+    @apply text-4xl leading-[1.6];
+  }
+
+  .header-3 {
+    @apply text-[32px] leading-[1.6];
+  }
+
+  .header-4 {
+    @apply text-2xl leading-[1.6];
+  }
+
+  .header-5 {
+    @apply text-[20px] leading-[1.6];
+  }
+
+  .header-6 {
+    @apply text-[18px] leading-[1.6];
+  }
+
+  .body-x-large {
+    @apply text-[18px] leading-[1.6] tracking-[0.2px];
+  }
+
+  .body-large {
+    @apply text-[16px] leading-[1.4] tracking-[0.2px];
+  }
+
+  .body-medium {
+    @apply text-[14px] leading-[1.4] tracking-[0.2px];
+  }
+
+  .body-small {
+    @apply text-[12px] leading-[1.6] tracking-[0.2px];
+  }
+
+  .body-x-small {
+    @apply text-[10px] leading-[1.6] tracking-[0.2px];
+  }
+}

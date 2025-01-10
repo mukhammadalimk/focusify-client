@@ -10,10 +10,10 @@ const IntroTextsBox = ({
 }: IntroTextsBoxProps) => {
   return (
     <motion.div className={className} {...rest}>
-      <h3 className="font-bold break_400:text-[32px] leading-[1.6] text-[#212121] dark:text-[#ffffff] xsm:text-[24px]">
+      <h3 className="font-bold text-[24px] break_400:text-[32px] leading-[1.6] text-[#212121] dark:text-[#ffffff] ">
         {mainText}
       </h3>
-      <p className="font-normal break_400:text-[18px] leading-[1.6] tracking-[0.2px] text-[#616161] dark:text-[#eee] xsm:text-[16px]">
+      <p className="font-normal body-x-large text-[#616161] dark:text-[#eee] ">
         {subText}
       </p>
     </motion.div>
