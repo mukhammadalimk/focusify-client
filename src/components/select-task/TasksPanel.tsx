@@ -1,9 +1,9 @@
+import { tasks } from "@/data";
 import Divider from "../Divider";
 import Input, { IconName } from "../Input";
 import TaskItem from "../task-item/TaskItem";
 import PanelHeader from "../panel/PanelHeader";
 import PanelWrapper from "../panel/PanelWrapper";
-import { tasks } from "@/data";
 
 const TasksPanel = ({ isPanelOpen, onClose, height }: TasksPanelProps) => {
   return (

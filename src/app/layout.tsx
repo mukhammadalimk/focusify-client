@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import { Playfair_Display, Urbanist, Roboto_Flex } from "next/font/google";
 import "@/styles/globals.css";
+import type { Metadata } from "next";
 import IpadWrapper from "@/components/IpadWrapper";
 import ThemeProvider from "@/context/ThemeProvider";
+import { Playfair_Display, Urbanist, Roboto_Flex } from "next/font/google";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],

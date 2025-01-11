@@ -1,6 +1,6 @@
+import React from "react";
 import Footer from "@/components/Footer";
 import GlobalLoading from "@/components/GlobalLoading";
-import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

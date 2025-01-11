@@ -12,7 +12,7 @@ const PrimaryButton = ({
   return (
     <button
       className={twMerge(
-        "h-[58px] rounded-full cursor-pointer w-full max-w-[400px] transition-all transform active:scale-[0.98] will-change-transform text-center body-x-large md:text-[22px] font-bold ",
+        "h-[58px] rounded-full cursor-pointer w-full max-w-[400px] transition-all transform active:scale-[0.98] will-change-transform text-center body-x-large md:text-[22px] font-bold",
         className
       )}
       onClick={onClick}

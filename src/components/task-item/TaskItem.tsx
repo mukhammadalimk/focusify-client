@@ -1,5 +1,5 @@
-import TaskTags from "./TaskTags";
 import TaskTop from "./TaskTop";
+import TaskTags from "./TaskTags";
 import TaskBottom from "./TaskBottom";
 
 const TaskItem = ({

@@ -22,7 +22,7 @@ const IntroTextsBox = ({
 interface IntroTextsBoxProps extends MotionProps {
   mainText: string;
   subText: string;
-  className: string;
+  className?: string;
 }
 
 export default IntroTextsBox;

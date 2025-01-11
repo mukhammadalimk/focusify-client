@@ -1,5 +1,5 @@
+import MainContent from "./components/MainContent";
 import SelectTask from "@/components/select-task/SelectTask";
-import MainContent from "./components/MainContainer";
 import NotificationIcon from "@/components/icons/NotificationIcon";
 import LogoSmallWhiteIcon from "@/components/icons/LogoSmallWhiteIcon";
 

@@ -1,8 +1,8 @@
-import SocialButton from "@/components/buttons/SocialButton";
 import AppleIcon from "../icons/AppleIcon";
 import GoogleIcon from "../icons/GoogleIcon";
 import TwitterIcon from "../icons/TwitterIcon";
 import FacebookIcon from "../icons/FacebookIcon";
+import SocialButton from "@/components/buttons/SocialButton";
 
 const SocialButtonsContainer = () => {
   return (

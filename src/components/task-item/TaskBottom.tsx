@@ -1,10 +1,10 @@
 import React from "react";
-import TimerCircleIcon from "../icons/TimerCircleIcon";
-import FlagIcon from "../icons/FlagIcon";
 import SunIcon from "../icons/SunIcon";
-import SuitcaseIcon from "../icons/SuitcaseIcon";
 import PlayIcon from "../icons/PlayIcon";
+import FlagIcon from "../icons/FlagIcon";
 import { TaskItemProps } from "./TaskItem";
+import SuitcaseIcon from "../icons/SuitcaseIcon";
+import TimerCircleIcon from "../icons/TimerCircleIcon";
 
 const TaskBottom = ({ numberOfPomodoros, projectName }: TaskBottomProps) => {
   return (

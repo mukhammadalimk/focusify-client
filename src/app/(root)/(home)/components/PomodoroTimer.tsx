@@ -1,8 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@/context/ThemeProvider";
+import { formatTime } from "@/utils";
 
-const PomodoroTimer = ({ duration }: PomodoroTimerProps) => {
+const PomodoroTimer = ({
+  duration,
+  started,
+  onSessionEnd,
+  whichSession,
+  numberOfSessions,
+  id,
+  isBreak,
+  allFinished,
+}: PomodoroTimerProps) => {
   const { mode } = useTheme();
   const [remainingTime, setRemainingTime] = useState(duration * 60);
   const [isRunning, setIsRunning] = useState(true);
@@ -10,14 +20,26 @@ const PomodoroTimer = ({ duration }: PomodoroTimerProps) => {
   const strokeDashoffset =
     circumference * (1 - remainingTime / (duration * 60));
 
+  // Restart the timer when duration is changed
+  useEffect(() => {
+    setRemainingTime(duration * 60);
+  }, [duration]);
+
+  // Toggle timer state
+  useEffect(() => {
+    setIsRunning(started);
+  }, [started]);
+
+  // To continuously update timer time
   useEffect(() => {
     if (!isRunning) return;
 
     const interval = setInterval(() => {
       setRemainingTime((prev) => {
-        if (prev <= 1) {
+        if (prev === 0) {
           clearInterval(interval);
           setIsRunning(false);
+          setTimeout(() => onSessionEnd(id), 0);
           return 0;
         }
         return prev - 1;
@@ -25,25 +47,15 @@ const PomodoroTimer = ({ duration }: PomodoroTimerProps) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isRunning]);
-
-  const formatTime = (time: number): string => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
-      2,
-      "0"
-    )}`;
-  };
+  }, [isRunning, onSessionEnd, id]);
 
   return (
     <div className="relative">
       <div className="big-background-cicle"></div>
 
       <div className="pomodoro-outer-circle">
-        {/* SVG Circle */}
         <svg
-          className="w-full h-full transform -rotate-90"
+          className="w-full h-full transition-all transform -rotate-90"
           viewBox="0 0 200 200"
         >
           <circle
@@ -73,7 +85,15 @@ const PomodoroTimer = ({ duration }: PomodoroTimerProps) => {
             {formatTime(remainingTime)}
           </h1>
           <span className="font-normal body-x-large transition-all duration-300 text-[#616161] dark:text-[#EEEEEE]">
-            1 of 4 sessions
+            {!allFinished
+              ? isBreak
+                ? "Short Break"
+                : `${whichSession} of ${numberOfSessions} session${
+                    numberOfSessions > 1 ? "s" : ""
+                  }`
+              : ""}
+
+            {allFinished && "Congratulations!"}
           </span>
         </div>
       </div>
@@ -83,6 +103,13 @@ const PomodoroTimer = ({ duration }: PomodoroTimerProps) => {
 
 interface PomodoroTimerProps {
   duration: number;
+  started: boolean;
+  onSessionEnd: (id: string) => void;
+  whichSession: number;
+  numberOfSessions: number;
+  id: string;
+  isBreak: boolean;
+  allFinished: boolean;
 }
 
 export default PomodoroTimer;

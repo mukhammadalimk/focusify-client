@@ -2,7 +2,7 @@
 
 @layer components {
   .ipad-pro-container {
-    @apply w-full h-full md:max-h-[900px] md:max-w-[700px] md:border-[3px] md:border-[#A7B5B9] dark:md:border-[#35383f] md:rounded-[45px] md:shadow-lg md:overflow-hidden;
+    @apply w-full h-full md:max-h-[900px] md:max-w-[700px] md:border-[3px] md:border-[#A7B5B9] dark:md:border-[#35383f] md:rounded-[45px] md:shadow-lg md:overflow-hidden min-w-[360px];
   }
 
   .ipad-pro {

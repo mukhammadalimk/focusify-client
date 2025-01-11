@@ -1,6 +1,6 @@
-import React, { ReactNode } from "react";
 import Portal from "./Portal";
 import { motion } from "framer-motion";
+import React, { ReactNode } from "react";
 
 const ModalBackdrop: React.FC<ModalBackdropProps> = ({
   isOpen,
