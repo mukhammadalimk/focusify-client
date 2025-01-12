@@ -8,4 +8,22 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .toggle-btn {
+    transition: background-color 0.1s ease, border-color 0.2s ease;
+  }
+
+  .toggle-btn .thumb {
+    top: 2px;
+    transform: translateX(0);
+    transition: left 0.15s ease;
+  }
+
+  .toggle-btn.toggled {
+    background-color: #ff6347;
+  }
+
+  .toggle-btn.toggled .thumb {
+    left: calc(44px - 22px);
+  }
 }

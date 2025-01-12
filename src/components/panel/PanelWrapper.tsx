@@ -12,24 +12,22 @@ const panelAnimation = {
 const PanelWrapper = ({
   isPanelOpen,
   onClose,
-  height = 700,
+  height,
   children,
 }: PropsWithChildren<PanelWrapperProps>) => {
   const [isVisible, setIsVisible] = useState(isPanelOpen);
 
   useEffect(() => {
     if (isPanelOpen) {
-      setIsVisible(true); // Show the panel immediately when opening
+      setIsVisible(true); // Show the modal immediately when opening
     } else {
-      // Delay calling onClose until the animation completes
-      const timeout = setTimeout(() => {
-        setIsVisible(false);
-        onClose(); // Call the parent's onClose after 300ms
-      }, 290); // Match this duration with Framer Motion's exit animation
-
+      // Delay hiding the modal to allow the animation to play
+      const timeout = setTimeout(() => setIsVisible(false), 300); // 300ms matches the CSS animation duration
       return () => clearTimeout(timeout);
     }
-  }, [isPanelOpen, onClose]);
+  }, [isPanelOpen]);
+
+  if (!isVisible) return null;
 
   return (
     <ModalBackdrop
@@ -42,7 +40,7 @@ const PanelWrapper = ({
           <motion.div
             role="dialog"
             aria-hidden={!isPanelOpen}
-            style={{ height: `${height}px` }}
+            style={{ height: height ? `${height}px` : "max-content" }}
             className="panel-wrapper"
             {...panelAnimation}
             onClick={(e) => e.stopPropagation()}
@@ -58,7 +56,7 @@ const PanelWrapper = ({
 interface PanelWrapperProps {
   isPanelOpen: boolean;
   onClose: () => void;
-  height: number;
+  height?: number;
 }
 
 export default PanelWrapper;

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import PomodoroTimer from "./PomodoroTimer";
-import PlayIcon from "@/components/icons/PlayIcon";
+import PlayVectorIcon from "@/components/icons/PlayVectorIcon";
 import PomodoroActionMenu from "./PomodoroActionMenu";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
 import TaskCompletedModal from "@/components/modals/TaskCompletedModal";
@@ -198,7 +198,7 @@ const MainContent = () => {
               disabled={allFinished}
               icon={
                 !pomodoroStarted && (
-                  <PlayIcon className={`mr-2 break_500:mr-4`} />
+                  <PlayVectorIcon className={`mr-2 break_500:mr-4`} />
                 )
               }
               onClick={!pomodoroStarted ? onStartPomodoro : onPausePomodoro}

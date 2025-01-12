@@ -1,6 +1,6 @@
 import React from "react";
 import SunIcon from "../icons/SunIcon";
-import PlayIcon from "../icons/PlayIcon";
+import PlayCircleIcon from "../icons/PlayCircleIcon";
 import FlagIcon from "../icons/FlagIcon";
 import { TaskItemProps } from "./TaskItem";
 import SuitcaseIcon from "../icons/SuitcaseIcon";
@@ -36,7 +36,7 @@ const TaskBottom = ({ numberOfPomodoros, projectName }: TaskBottomProps) => {
       </div>
 
       <div>
-        <PlayIcon
+        <PlayCircleIcon
           className="cursor-pointer w-6 h-6 break_400:w-auto break_400:h-auto"
           aria-hidden="true"
         />
