@@ -18,8 +18,6 @@ const SelectTask = () => {
   };
 
   const onClosePanel = () => {
-    console.log("afsd");
-
     setIsPanelOpen(false);
   };
 

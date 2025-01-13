@@ -4,26 +4,22 @@ import DangerCircleIcon from "@/components/icons/DangerCircleIcon";
 import { useState } from "react";
 import StrictModePanel from "@/components/panels/StrictModePanel";
 import TimerModePanel from "@/components/panels/TimerModePanel";
-
-enum Menus {
-  StrictMode = "strictMode",
-  TimerMode = "timerMode",
-  whiteNoiseMode = "whiteNoiseMode",
-}
+import WhiteNoisePanel from "@/components/panels/WhiteNoisePanel";
+import { ModeMenu } from "@/types";
 
 const menuItems = [
   {
-    id: Menus.StrictMode,
+    id: ModeMenu.StrictMode,
     name: "Strict Mode",
     icon: <DangerCircleIcon className="fill-[#616161] dark:fill-[#EEEEEE]" />,
   },
   {
-    id: Menus.TimerMode,
+    id: ModeMenu.TimerMode,
     name: "Timer Mode",
     icon: <HourGlassIcon className="fill-[#616161] dark:fill-[#EEEEEE]" />,
   },
   {
-    id: Menus.whiteNoiseMode,
+    id: ModeMenu.WhiteNoise,
     name: "White Noise",
     icon: <MusicIcon className="fill-[#616161] dark:fill-[#EEEEEE]" />,
   },
@@ -32,20 +28,26 @@ const menuItems = [
 const menusInitialState = {
   strictMode: false,
   timerMode: false,
-  whiteNoiseMode: false,
+  whiteNoise: false,
 };
 
 interface MenuInitialState {
   strictMode: boolean;
   timerMode: boolean;
-  whiteNoiseMode: boolean;
+  whiteNoise: boolean;
 }
 
 const PomodoroActionMenu = () => {
   const [menusState, setMenusState] =
     useState<MenuInitialState>(menusInitialState);
+  const [height, setHeight] = useState(0);
 
-  const onToggleMenuItem = (val: Menus) => {
+  const onToggleMenuItem = (val: ModeMenu) => {
+    if (val === ModeMenu.WhiteNoise) {
+      const ipadWrapper = document.getElementById("ipad-pro") as HTMLDivElement;
+      setHeight((ipadWrapper.clientHeight / 100) * 78);
+    }
+
     setMenusState((prev) => ({ ...prev, [val]: !prev[val] }));
   };
 
@@ -53,12 +55,18 @@ const PomodoroActionMenu = () => {
     <>
       <StrictModePanel
         isPanelOpen={menusState.strictMode}
-        onClose={() => onToggleMenuItem(Menus.StrictMode)}
+        onClose={() => onToggleMenuItem(ModeMenu.StrictMode)}
       />
 
       <TimerModePanel
         isPanelOpen={menusState.timerMode}
-        onClose={() => onToggleMenuItem(Menus.TimerMode)}
+        onClose={() => onToggleMenuItem(ModeMenu.TimerMode)}
+      />
+
+      <WhiteNoisePanel
+        isPanelOpen={menusState.whiteNoise}
+        onClose={() => onToggleMenuItem(ModeMenu.WhiteNoise)}
+        height={height}
       />
 
       <div className="flex z-10 justify-evenly w-full select-none">

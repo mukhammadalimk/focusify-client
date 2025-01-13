@@ -1,4 +1,4 @@
-import { StrictModeItem } from "@/types";
+import { StrictModeItem, WhiteNoise } from "@/types";
 
 export const tasks = [
   {
@@ -93,3 +93,18 @@ export const strictModes: StrictModeItem[] = [
 ];
 
 //--------------------------------------
+export const whiteNoises = [
+  { id: "1", label: "None", value: WhiteNoise.None },
+  { id: "2", label: "Café Ambiance", value: WhiteNoise.CaféAmbiance },
+  { id: "3", label: "Rainforest Sounds", value: WhiteNoise.RainforestSounds },
+  { id: "4", label: "Beach Waves", value: WhiteNoise.BeachWaves },
+  { id: "5", label: "Forest Birds", value: WhiteNoise.ForestBirds },
+  { id: "6", label: "Mountain Stream", value: WhiteNoise.MountainStream },
+  { id: "7", label: "City Streets", value: WhiteNoise.CityStreets },
+  { id: "8", label: "Ocean Breeze", value: WhiteNoise.OceanBreeze },
+  {
+    id: "9",
+    label: "Fireplace Crackling",
+    value: WhiteNoise.FireplaceCrackling,
+  },
+];

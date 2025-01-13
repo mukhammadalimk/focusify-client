@@ -1,12 +1,12 @@
-import PanelHeader from "../panel/PanelHeader";
-import PanelWrapper from "../panel/PanelWrapper";
-import PrimaryButton from "../buttons/PrimaryButton";
+import PanelButtons from "./PanelButtons";
 import CheckIcon from "../icons/CheckIcon";
-import InfinityIcon from "../icons/InfinityIcon";
-import React, { useCallback, useEffect, useState } from "react";
-import { LOCAL_STORAGE_KEYS, TimerMode } from "@/types";
 import { getSavedTimerMode } from "@/utils";
+import PanelHeader from "../panel/PanelHeader";
+import InfinityIcon from "../icons/InfinityIcon";
+import PanelWrapper from "../panel/PanelWrapper";
 import ArrowRightIcon from "../icons/ArrowRightIcon";
+import { LOCAL_STORAGE_KEYS, TimerMode } from "@/types";
+import React, { useCallback, useEffect, useState } from "react";
 
 // Array of timer modes to iterate over
 const timerModes = [
@@ -22,7 +22,7 @@ const timerModes = [
   },
 ];
 
-const TimerModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
+const TimerModePanel = ({ isPanelOpen, onClose }: TimerModePanelProps) => {
   const [timerMode, setTimerMode] = useState(TimerMode.Countdown);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const TimerModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
             aria-checked={timerMode === mode}
           >
             <div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 font-semibold">
                 <h4 className="header-4">{labels[0]}</h4>
                 <ArrowRightIcon />
                 {typeof labels[1] === "string" ? (
@@ -61,7 +61,7 @@ const TimerModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
                   labels[1]
                 )}
               </div>
-              <span className="body-medium break_500:text-[16px] leading-[1.6] text-[#616161] dark:text-[#EEEEEE]">
+              <span className="body-small text-[13px] break_500:text-[16px] text-[#616161] dark:text-[#EEEEEE] font-regular">
                 {description}
               </span>
             </div>
@@ -70,23 +70,12 @@ const TimerModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
         ))}
       </div>
 
-      <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6">
-        <PrimaryButton
-          text="Cancel"
-          className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
-          onClick={onClose}
-        />
-        <PrimaryButton
-          text="Save"
-          className="bg-[#FF6347] text-white"
-          onClick={onSave}
-        />
-      </div>
+      <PanelButtons onCancel={onClose} onSave={onSave} />
     </PanelWrapper>
   );
 };
 
-interface StrictModePanelProps {
+interface TimerModePanelProps {
   isPanelOpen: boolean;
   onClose: () => void;
 }

@@ -1,11 +1,11 @@
 "use client";
-import { useState, useCallback, useMemo } from "react";
-import PrimaryButton from "../buttons/PrimaryButton";
+import { strictModes } from "@/data";
+import { StrictModeItem } from "@/types";
+import PanelButtons from "./PanelButtons";
+import ToggleRow from "../shared/ToggleRow";
 import PanelHeader from "../panel/PanelHeader";
 import PanelWrapper from "../panel/PanelWrapper";
-import ToggleRow from "../shared/ToggleRow";
-import { StrictModeItem } from "@/types";
-import { strictModes } from "@/data";
+import { useState, useCallback, useMemo } from "react";
 
 const StrictModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
   const [modeItems, setModeItems] = useState<StrictModeItem[]>(
@@ -46,18 +46,7 @@ const StrictModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
 
       <div className="flex gap-7 flex-col py-5">{renderedToggleRows}</div>
 
-      <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6">
-        <PrimaryButton
-          text="Cancel"
-          className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
-          onClick={onCancel}
-        />
-        <PrimaryButton
-          text="Save"
-          className="bg-[#FF6347] text-white"
-          onClick={onSave}
-        />
-      </div>
+      <PanelButtons onCancel={onCancel} onSave={onSave} />
     </PanelWrapper>
   );
 };
