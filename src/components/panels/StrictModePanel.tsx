@@ -4,23 +4,13 @@ import PrimaryButton from "../buttons/PrimaryButton";
 import PanelHeader from "../panel/PanelHeader";
 import PanelWrapper from "../panel/PanelWrapper";
 import ToggleRow from "../shared/ToggleRow";
-
-export interface ModeItem {
-  id: string;
-  title: string;
-  turnedOn: boolean;
-}
-
-const items: ModeItem[] = [
-  { id: "1", title: "Block All Notifications", turnedOn: false },
-  { id: "2", title: "Block Phone Calls", turnedOn: true },
-  { id: "3", title: "Block Other Apps", turnedOn: false },
-  { id: "4", title: "Lock Phone", turnedOn: false },
-  { id: "5", title: "Prohibit to Exit", turnedOn: false },
-];
+import { StrictModeItem } from "@/types";
+import { strictModes } from "@/data";
 
 const StrictModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
-  const [modeItems, setModeItems] = useState<ModeItem[]>(() => items);
+  const [modeItems, setModeItems] = useState<StrictModeItem[]>(
+    () => strictModes
+  );
 
   // Memoize the toggle function to prevent unnecessary re-renders
   const onUpdateItems = useCallback((id: string) => {
@@ -41,7 +31,7 @@ const StrictModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
   );
 
   const onCancel = () => {
-    setModeItems(items); // Reset to initial state
+    setModeItems(strictModes); // Reset to initial state
     onClose();
   };
 
@@ -52,7 +42,7 @@ const StrictModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
 
   return (
     <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
-      <PanelHeader title="Strict Mode" withIcon />
+      <PanelHeader title="Strict Mode" />
 
       <div className="flex gap-7 flex-col py-5">{renderedToggleRows}</div>
 

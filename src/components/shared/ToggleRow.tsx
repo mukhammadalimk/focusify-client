@@ -1,5 +1,5 @@
 import React from "react";
-import { ModeItem } from "../panels/StrictModePanel";
+import { StrictModeItem } from "@/types";
 
 const ToggleRow = React.memo(({ item, onUpdateState }: ToggleRowProps) => {
   return (
@@ -23,7 +23,7 @@ const ToggleRow = React.memo(({ item, onUpdateState }: ToggleRowProps) => {
 ToggleRow.displayName = "ToggleRow";
 
 interface ToggleRowProps {
-  item: ModeItem;
+  item: StrictModeItem;
   onUpdateState: (id: string) => void;
 }
 

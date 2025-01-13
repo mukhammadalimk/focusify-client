@@ -3,6 +3,7 @@ import HourGlassIcon from "@/components/icons/HourGlassIcon";
 import DangerCircleIcon from "@/components/icons/DangerCircleIcon";
 import { useState } from "react";
 import StrictModePanel from "@/components/panels/StrictModePanel";
+import TimerModePanel from "@/components/panels/TimerModePanel";
 
 enum Menus {
   StrictMode = "strictMode",
@@ -53,6 +54,11 @@ const PomodoroActionMenu = () => {
       <StrictModePanel
         isPanelOpen={menusState.strictMode}
         onClose={() => onToggleMenuItem(Menus.StrictMode)}
+      />
+
+      <TimerModePanel
+        isPanelOpen={menusState.timerMode}
+        onClose={() => onToggleMenuItem(Menus.TimerMode)}
       />
 
       <div className="flex z-10 justify-evenly w-full select-none">

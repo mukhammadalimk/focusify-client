@@ -1,3 +1,5 @@
+import { StrictModeItem } from "@/types";
+
 export const tasks = [
   {
     id: "1",
@@ -80,3 +82,14 @@ export const tasks = [
     ],
   },
 ];
+
+//--------------------------------------
+export const strictModes: StrictModeItem[] = [
+  { id: "1", title: "Block All Notifications", turnedOn: false },
+  { id: "2", title: "Block Phone Calls", turnedOn: true },
+  { id: "3", title: "Block Other Apps", turnedOn: false },
+  { id: "4", title: "Lock Phone", turnedOn: false },
+  { id: "5", title: "Prohibit to Exit", turnedOn: false },
+];
+
+//--------------------------------------
