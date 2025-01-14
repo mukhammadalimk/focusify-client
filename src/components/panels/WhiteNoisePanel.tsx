@@ -43,7 +43,7 @@ const WhiteNoisePanel = ({
             role="radio"
             aria-checked={whiteNoise === noise.value}
             tabIndex={0}
-            className="flex items-center justify-between border-b border-b-[#eeeeee] py-5 last:border-b-0 cursor-pointer"
+            className="flex items-center justify-between border-b border-b-[#eeeeee] dark:border-b-[#35383F] py-5 last:border-b-0 cursor-pointer"
             onClick={() => onSelectWhiteNoise(noise.value)}
           >
             <h5 className="header-5 font-semibold">{noise.label}</h5>

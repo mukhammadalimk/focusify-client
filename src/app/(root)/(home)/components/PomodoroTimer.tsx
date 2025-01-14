@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@/context/ThemeProvider";
-import { formatTime } from "@/utils";
+import { formatPomodoroTime } from "@/utils";
 
 const PomodoroTimer = ({
   duration,
@@ -82,7 +82,7 @@ const PomodoroTimer = ({
 
         <div className="text-center absolute">
           <h1 className="font-bold text-[56px] break_400:text-[64px] transition-all duration-300 leading-[1.2032]">
-            {formatTime(remainingTime)}
+            {formatPomodoroTime(remainingTime)}
           </h1>
           <span className="font-normal body-x-large transition-all duration-300 text-[#616161] dark:text-[#EEEEEE]">
             {!allFinished

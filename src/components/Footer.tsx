@@ -1,7 +1,7 @@
 "use client";
 import { JSX, useState } from "react";
 import CalendarRedIcon from "./icons/CalendarRedIcon";
-import CalendarWhiteIcon from "./icons/CalendarWhiteIcon";
+import CalendarGrayShadeIcon from "./icons/CalendarGrayShadeIcon";
 import PomodoroWhiteIcon from "./icons/PomodoroWhiteIcon";
 import PomodoroRedIcon from "./icons/PomodorRedIcon";
 import SettingsRedIcon from "./icons/SettingsRedIcon";
@@ -15,7 +15,7 @@ const Footer = () => {
   const [active, setActive] = useState<FooterItemTitle>("Pomodoro");
 
   return (
-    <div className="bg-white dark:bg-[#181A20] w-full h-[70px] border-t border-[#F5F5F5] dark:border-[#35383F] flex items-center z-10 absolute bottom-0">
+    <div className="bg-white dark:bg-[#181A20] w-full h-[70px] border-t border-[#F5F5F5] dark:border-[#35383F] flex items-center z-10 absolute bottom-0 select-none">
       <div className="w-full flex justify-evenly items-center">
         {footerItems.map((item) => (
           <div
@@ -77,7 +77,9 @@ const footerItems: FooterItem[] = [
       if (active) {
         return <CalendarRedIcon className="mx-auto w-6 h-6" />;
       } else {
-        return <CalendarWhiteIcon className="mx-auto w-6 h-6" />;
+        return (
+          <CalendarGrayShadeIcon className="mx-auto w-6 h-6 !text-[#fff]" />
+        );
       }
     },
   },
@@ -97,7 +99,7 @@ const footerItems: FooterItem[] = [
       if (active) {
         return <SettingsRedIcon className="mx-auto w-6 h-6" />;
       } else {
-        return <SettingsWhiteIcon className="mx-auto w-6 h-6" />;
+        return <SettingsWhiteIcon className="mx-auto w-6 h-6 fill-[#9E9E9E]" />;
       }
     },
   },

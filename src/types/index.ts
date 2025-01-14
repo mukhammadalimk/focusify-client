@@ -21,6 +21,12 @@ export enum WhiteNoise {
   FireplaceCrackling = "Fireplace Crackling",
 }
 
+export interface WhiteNoiseItem {
+  id: string;
+  label: string;
+  value: WhiteNoise;
+}
+
 export const LOCAL_STORAGE_KEYS = {
   TIMER_MODE: "timerMode",
   WHITE_NOISE: "whiteNoise",
@@ -30,4 +36,21 @@ export interface StrictModeItem {
   id: string;
   title: string;
   turnedOn: boolean;
+}
+
+export enum NotificationType {
+  Security = "security",
+  SystemUpdate = "system_update",
+  PasswordReset = "password_reset",
+  NewFeature = "new_feature",
+  EventReminder = "event_reminder",
+}
+
+export interface NotificationItemType {
+  id: string;
+  type: NotificationType;
+  title: string;
+  description: string;
+  created_at: Date;
+  isRead: boolean;
 }

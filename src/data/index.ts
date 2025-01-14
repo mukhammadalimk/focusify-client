@@ -1,4 +1,10 @@
-import { StrictModeItem, WhiteNoise } from "@/types";
+import {
+  NotificationType,
+  NotificationItemType,
+  StrictModeItem,
+  WhiteNoise,
+  WhiteNoiseItem,
+} from "@/types";
 
 export const tasks = [
   {
@@ -93,7 +99,7 @@ export const strictModes: StrictModeItem[] = [
 ];
 
 //--------------------------------------
-export const whiteNoises = [
+export const whiteNoises: WhiteNoiseItem[] = [
   { id: "1", label: "None", value: WhiteNoise.None },
   { id: "2", label: "Café Ambiance", value: WhiteNoise.CaféAmbiance },
   { id: "3", label: "Rainforest Sounds", value: WhiteNoise.RainforestSounds },
@@ -106,5 +112,89 @@ export const whiteNoises = [
     id: "9",
     label: "Fireplace Crackling",
     value: WhiteNoise.FireplaceCrackling,
+  },
+];
+
+//--------------------------------------
+export const sampleNotifications: NotificationItemType[] = [
+  {
+    id: "10",
+    type: NotificationType.EventReminder,
+    title: "Webinar Reminder",
+    description: "Don't forget the webinar on new platform updates.",
+    created_at: new Date("2025-01-14T13:00:00Z"),
+    isRead: false,
+  },
+  {
+    id: "9",
+    type: NotificationType.NewFeature,
+    title: "New Collaboration Tool",
+    description: "Explore our new real-time collaboration feature.",
+    created_at: new Date("2025-01-13T12:00:00Z"),
+    isRead: false,
+  },
+  {
+    id: "8",
+    type: NotificationType.PasswordReset,
+    title: "Password Changed",
+    description: "Your password was successfully changed.",
+    created_at: new Date("2025-01-12T10:30:00Z"),
+    isRead: true,
+  },
+  {
+    id: "7",
+    type: NotificationType.Security,
+    title: "Security Alert",
+    description: "Unusual login attempt detected.",
+    created_at: new Date("2025-01-08T18:45:00Z"),
+    isRead: true,
+  },
+  {
+    id: "6",
+    type: NotificationType.SystemUpdate,
+    title: "Maintenance Scheduled",
+    description: "System maintenance scheduled for Jan 15th.",
+    created_at: new Date("2025-01-07T08:00:00Z"),
+    isRead: false,
+  },
+  {
+    id: "5",
+    type: NotificationType.NewFeature,
+    title: "Dark Mode",
+    description: "Dark mode is now available in settings.",
+    created_at: new Date("2025-01-06T20:15:00Z"),
+    isRead: true,
+  },
+  {
+    id: "4",
+    type: NotificationType.EventReminder,
+    title: "Team Meeting",
+    description: "Weekly team meeting scheduled for Jan 12th.",
+    created_at: new Date("2025-01-05T09:45:00Z"),
+    isRead: false,
+  },
+  {
+    id: "3",
+    type: NotificationType.PasswordReset,
+    title: "Password Reset Request",
+    description: "You requested a password reset.",
+    created_at: new Date("2025-01-04T11:20:00Z"),
+    isRead: true,
+  },
+  {
+    id: "2",
+    type: NotificationType.Security,
+    title: "Security Update",
+    description: "New security patch applied.",
+    created_at: new Date("2025-01-03T15:35:00Z"),
+    isRead: false,
+  },
+  {
+    id: "1",
+    type: NotificationType.SystemUpdate,
+    title: "System Upgrade",
+    description: "System upgraded to version 3.2.0.",
+    created_at: new Date("2025-01-02T17:50:00Z"),
+    isRead: true,
   },
 ];

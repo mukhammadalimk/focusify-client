@@ -36,4 +36,8 @@
   .select-task {
     @apply bg-[#FAFAFA] dark:bg-[#1F222A] px-5 py-[18px] rounded-[10px] flex justify-between items-center w-full max-w-[500px] mx-auto relative overflow-hidden h-[69px];
   }
+
+  .notification-icon {
+    @apply text-[#212121] dark:text-white w-[18.5px] h-[18.5px] break_500:w-[21px] break_500:h-[21px];
+  }
 }
