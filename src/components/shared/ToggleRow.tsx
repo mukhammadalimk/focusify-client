@@ -7,7 +7,7 @@ const ToggleRow = React.memo(({ item, onUpdateState }: ToggleRowProps) => {
       <h5 className="header-5 font-semibold">{item.title}</h5>
 
       <button
-        className={`h-6 w-11 bg-[#E0E0E0] rounded-full togle-row-transition relative toggle-btn ${
+        className={`h-6 w-11 bg-[#E0E0E0] dark:bg-[#35383F] rounded-full togle-row-transition relative toggle-btn ${
           item.turnedOn ? "toggled" : ""
         }`}
         onClick={() => onUpdateState(item.id)}

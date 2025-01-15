@@ -45,7 +45,7 @@ export default function RootLayout({
         ></meta>
       </head>
       <body
-        className={`${playfairDisplay.variable} ${urbanist.variable} ${robotoFlex.variable} antialiased`}
+        className={`${playfairDisplay.variable} ${urbanist.variable} ${robotoFlex.variable} antialiased bg-white dark:bg-[#181A20] md:dark:bg-[#47474a]`}
       >
         <ThemeProvider>
           <div className="min-h-[100vh] grid place-items-center">
