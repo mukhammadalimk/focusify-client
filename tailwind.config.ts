@@ -12,6 +12,7 @@ export default {
         sm: "360px",
         break_400: "400px",
         break_500: "500px",
+        break_550: "550px",
         break_600: "600px",
         break_700: "700px",
         md: "768px",

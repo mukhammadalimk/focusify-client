@@ -17,7 +17,7 @@ const TasksPanel = ({ isPanelOpen, onClose, height }: TasksPanelProps) => {
         id="select-task"
         iconName={IconName.Search}
         withoutLabel
-        inputStyle="text-[#BDBDBD] dark:text-[#757575] font-normal mt-5 mb-4 break_500:my-5"
+        inputStyle="font-normal mt-5 mb-4 break_500:my-5"
         containerStyle="max-w-none w-full"
       />
 

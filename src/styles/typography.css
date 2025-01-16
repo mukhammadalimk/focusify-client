@@ -33,6 +33,10 @@
     @apply text-[16px] leading-[1.4] tracking-[0.2px];
   }
 
+  .body-large-1-6 {
+    @apply text-[16px] leading-[1.6] tracking-[0.2px];
+  }
+
   .body-medium {
     @apply text-[14px] leading-[1.4] tracking-[0.2px];
   }

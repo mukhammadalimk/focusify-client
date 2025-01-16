@@ -1,5 +1,5 @@
 "use client";
-import { JSX, useState } from "react";
+import { JSX } from "react";
 import CalendarRedIcon from "./icons/CalendarRedIcon";
 import CalendarGrayShadeIcon from "./icons/CalendarGrayShadeIcon";
 import PomodoroWhiteIcon from "./icons/PomodoroWhiteIcon";
@@ -10,28 +10,30 @@ import ManageWhiteIcon from "./icons/ManageWhiteIcon";
 import ManageRedIcon from "./icons/ManageRedIcon";
 import ReportRedIcon from "./icons/ReportRedIcon";
 import ReportWhiteIcon from "./icons/ReportWhiteIcon";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  const [active, setActive] = useState<FooterItemTitle>("Pomodoro");
+  const pathname = usePathname(); // Get the current path
 
   return (
-    <div className="bg-white dark:bg-[#181A20] w-full h-[60px] md:h-[75px] border-t border-[#EEEEEE] dark:border-[#35383F] flex items-center z-10 md:absolute fixed bottom-0 select-none">
+    <div className="bg-white dark:bg-[#181A20] w-full h-[60px] md:h-[70px] border-t border-[#EEEEEE] dark:border-[#35383F] flex items-center md:absolute fixed bottom-0 select-none z-[100]">
       <div className="w-full flex justify-evenly items-center">
         {footerItems.map((item) => (
-          <div
+          <Link
+            href={item.link}
             className="flex flex-col gap-[2px] cursor-pointer transition-all transform active:scale-[0.98] will-change-transform w-[55px] break_400:w-[70px] text-center"
             key={item.title}
-            onClick={() => setActive(item.title)}
           >
-            {item.getIcon(item.title === active)}
+            {item.getIcon(item.link === pathname)}
             <span
               className={`font-medium body-x-small break_500:text-[15px] text-[#9E9E9E]${
-                item.title === active ? " text-[#FF6347]" : ""
+                item.link === pathname ? " text-[#FF6347]" : ""
               }`}
             >
               {item.title}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -48,6 +50,7 @@ type FooterItemTitle =
 interface FooterItem {
   title: FooterItemTitle;
   getIcon: (active: boolean) => JSX.Element;
+  link: string;
 }
 
 const footerItems: FooterItem[] = [
@@ -60,6 +63,7 @@ const footerItems: FooterItem[] = [
         return <PomodoroWhiteIcon className="mx-auto w-6 h-6" />;
       }
     },
+    link: "/",
   },
   {
     title: "Manage",
@@ -70,6 +74,7 @@ const footerItems: FooterItem[] = [
         return <ManageWhiteIcon className="mx-auto w-6 h-6" />;
       }
     },
+    link: "/manage",
   },
   {
     title: "Calendar",
@@ -82,6 +87,7 @@ const footerItems: FooterItem[] = [
         );
       }
     },
+    link: "/calendar",
   },
   {
     title: "Report",
@@ -92,6 +98,7 @@ const footerItems: FooterItem[] = [
         return <ReportWhiteIcon className="mx-auto w-6 h-6" />;
       }
     },
+    link: "/report",
   },
   {
     title: "Settings",
@@ -102,6 +109,7 @@ const footerItems: FooterItem[] = [
         return <SettingsWhiteIcon className="mx-auto w-6 h-6 fill-[#9E9E9E]" />;
       }
     },
+    link: "/settings",
   },
 ];
 

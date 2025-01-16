@@ -40,11 +40,11 @@ const getIcon = (iconName: IconName) => {
       );
     case IconName.Search:
       return (
-        <SearchIcon className="fill-[#BDBDBD] dark:fill-[#757575] absolute top-1/2 -translate-y-1/2 left-5" />
+        <SearchIcon className="text-[#BDBDBD] text:fill-[#757575] absolute top-1/2 -translate-y-1/2 left-5 w-5 h-5" />
       );
 
     default:
-      return null;
+      return <></>;
   }
 };
 
@@ -77,6 +77,7 @@ const Input = ({
       )}
 
       {getIcon(iconName)}
+
       <input
         type={passwordShown && type === "password" ? "text" : type}
         id={id}

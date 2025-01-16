@@ -13,7 +13,7 @@ const PanelHeader = ({ title, withIcon }: PanelHeaderProps) => {
           </h4>
 
           {withIcon && (
-            <PlusIcon className="absolute top-1/2 -translate-y-1/2 right-0 cursor-pointer transition-all transform active:scale-[0.98] will-change-transform" />
+            <PlusIcon className="absolute top-1/2 -translate-y-1/2 right-0 cursor-pointer transition-transform transform active:scale-[0.95] text-[#FF6347]" />
           )}
         </div>
 
