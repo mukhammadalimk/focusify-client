@@ -17,7 +17,7 @@ const Footer = () => {
   const pathname = usePathname(); // Get the current path
 
   return (
-    <div className="bg-white dark:bg-[#181A20] w-full h-[60px] md:h-[70px] border-t border-[#EEEEEE] dark:border-[#35383F] flex items-center md:absolute fixed bottom-0 select-none z-[100]">
+    <div className="bg-white dark:bg-[#181A20] w-full h-[60px] md:h-[70px] border-t border-[#EEEEEE] dark:border-[#35383F] flex items-center md:absolute fixed bottom-0 select-none z-[20]">
       <div className="w-full flex justify-evenly items-center">
         {footerItems.map((item) => (
           <Link

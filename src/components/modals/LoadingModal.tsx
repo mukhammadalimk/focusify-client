@@ -7,7 +7,7 @@ const LoadingModal = ({ isModalOpen, text }: LoadingModalProps) => {
   return (
     <ModalBackdrop isOpen={isModalOpen} containerId="home-root">
       <motion.div
-        className="bg-white dark:bg-[#1F222A] max-w-[440px] min-w-[340px] rounded-xl p-8 text-center z-55"
+        className="bg-white dark:bg-[#1F222A] max-w-[440px] min-w-[340px] rounded-xl p-8 text-center z-50"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}

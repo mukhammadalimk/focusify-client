@@ -18,87 +18,89 @@ const Manage = () => {
         <ThreeDotsIcon />
       </TopNavbarWrapper>
 
-      <div className="pb-[70px] md:pb-[80px] pt-[80px] px-3 md:px-4 overflow-y-auto h-full">
-        <Input
-          type="text"
-          text="Search task..."
-          placeholder="Search task..."
-          id="select-task"
-          iconName={IconName.Search}
-          withoutLabel
-          inputStyle="font-normal"
-          containerStyle="max-w-none w-full"
-        />
-
-        <GridSection>
-          <ProjectBox
-            color="#4AAF57"
-            type={ProjectType.Today}
-            title="Today"
-            hours="6h 25m"
-            numberOfPomodoros={4}
+      <div className="h-full overscroll-y-none">
+        <div className="overflow-y-auto h-full no-scrollbar pb-[130px] md:pb-[140px] pt-[80px] px-3 md:px-4">
+          <Input
+            type="text"
+            text="Search task..."
+            placeholder="Search task..."
+            id="select-task"
+            iconName={IconName.Search}
+            withoutLabel
+            inputStyle="font-normal"
+            containerStyle="max-w-none w-full"
           />
 
-          <ProjectBox
-            color="#1A96F0"
-            type={ProjectType.Tomorrow}
-            title="Tomorrow"
-            hours="6h 40m"
-            numberOfPomodoros={4}
-          />
-
-          <ProjectBox
-            color="#FF981F"
-            type={ProjectType.ThisWeek}
-            title="This Week"
-            hours="13h 20m"
-            numberOfPomodoros={10}
-          />
-
-          <ProjectBox
-            color="#9D28AC"
-            type={ProjectType.Planned}
-            title="Planned"
-            hours="20h 50m"
-            numberOfPomodoros={18}
-          />
-
-          <ProjectBox
-            color="#8BC255"
-            type={ProjectType.Completed}
-            title="Completed"
-            hours="100h 20m"
-            numberOfPomodoros={41}
-          />
-
-          <ProjectBox
-            color="#F54336"
-            type={ProjectType.Trash}
-            title="Trash"
-            hours="5h 20m"
-            numberOfPomodoros={6}
-          />
-        </GridSection>
-
-        <div className="flex gap-4 items-center ">
-          <span className="whitespace-nowrap font-semibold text-[16px] break_400:text-[18px] body-x-large text-[#9E9E9E]">
-            Projects
-          </span>
-          <Divider />
-        </div>
-
-        <GridSection>
-          {Array.from({ length: 16 }).map((_, i) => (
+          <GridSection>
             <ProjectBox
-              key={i}
               color="#4AAF57"
-              type={ProjectType.Project}
-              title="Pomodoro App"
+              type={ProjectType.Today}
+              title="Today"
               hours="6h 25m"
               numberOfPomodoros={4}
             />
-          ))}
-        </GridSection>
+
+            <ProjectBox
+              color="#1A96F0"
+              type={ProjectType.Tomorrow}
+              title="Tomorrow"
+              hours="6h 40m"
+              numberOfPomodoros={4}
+            />
+
+            <ProjectBox
+              color="#FF981F"
+              type={ProjectType.ThisWeek}
+              title="This Week"
+              hours="13h 20m"
+              numberOfPomodoros={10}
+            />
+
+            <ProjectBox
+              color="#9D28AC"
+              type={ProjectType.Planned}
+              title="Planned"
+              hours="20h 50m"
+              numberOfPomodoros={18}
+            />
+
+            <ProjectBox
+              color="#8BC255"
+              type={ProjectType.Completed}
+              title="Completed"
+              hours="100h 20m"
+              numberOfPomodoros={41}
+            />
+
+            <ProjectBox
+              color="#F54336"
+              type={ProjectType.Trash}
+              title="Trash"
+              hours="5h 20m"
+              numberOfPomodoros={6}
+            />
+          </GridSection>
+
+          <div className="flex gap-4 items-center ">
+            <span className="whitespace-nowrap font-semibold text-[16px] break_400:text-[18px] body-x-large text-[#9E9E9E]">
+              Projects
+            </span>
+            <Divider />
+          </div>
+
+          <GridSection>
+            {Array.from({ length: 18 }).map((_, i) => (
+              <ProjectBox
+                key={i}
+                color="#4AAF57"
+                type={ProjectType.Project}
+                title="Pomodoro App"
+                hours="6h 25m"
+                numberOfPomodoros={4}
+              />
+            ))}
+          </GridSection>
+        </div>
       </div>
 
       <AddTaskButton />

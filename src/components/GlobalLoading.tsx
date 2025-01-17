@@ -14,7 +14,7 @@ const GlobalLoading = ({ children }: { children: React.ReactNode }) => {
     // Show loading for 1 second
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 150);
+    }, 50);
 
     // Navigate only if on homepage and user is false
     if (pathname === "/" && !user) {

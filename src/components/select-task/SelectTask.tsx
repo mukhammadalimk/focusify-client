@@ -8,12 +8,12 @@ const taskSelected = false;
 
 const SelectTask = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [height, setHeight] = useState(0);
+  // const [height, setHeight] = useState(0);
 
   const onOpenHandler = () => {
     if (taskSelected) return;
-    const ipadWrapper = document.getElementById("ipad-pro") as HTMLDivElement;
-    setHeight((ipadWrapper.clientHeight / 100) * 78);
+    // const ipadWrapper = document.getElementById("ipad-pro") as HTMLDivElement;
+    // setHeight((ipadWrapper.clientHeight / 100) * 78);
     setIsPanelOpen(true);
   };
 
@@ -23,11 +23,7 @@ const SelectTask = () => {
 
   return (
     <>
-      <TasksPanel
-        isPanelOpen={isPanelOpen}
-        onClose={onClosePanel}
-        height={height}
-      />
+      <TasksPanel isPanelOpen={isPanelOpen} onClose={onClosePanel} />
 
       <div
         className={`select-task${taskSelected ? "" : " cursor-pointer"}`}

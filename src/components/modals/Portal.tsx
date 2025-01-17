@@ -17,7 +17,7 @@ const Portal: React.FC<PortalProps> = ({ children, containerId }) => {
       // If it doesn't exist, create and append it
       portalContainer = document.createElement("div");
       portalContainer.id = containerId;
-      portalContainer.classList.add("flex", "z-[200]"); // Add necessary classes
+      portalContainer.classList.add("flex", "z-[50]"); // Add necessary classes
       document.body.appendChild(portalContainer);
     }
 

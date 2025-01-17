@@ -5,9 +5,9 @@ import TaskItem from "../task-item/TaskItem";
 import PanelHeader from "../panel/PanelHeader";
 import PanelWrapper from "../panel/PanelWrapper";
 
-const TasksPanel = ({ isPanelOpen, onClose, height }: TasksPanelProps) => {
+const TasksPanel = ({ isPanelOpen, onClose }: TasksPanelProps) => {
   return (
-    <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose} height={height}>
+    <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
       <PanelHeader title="Select Task" withIcon />
 
       <Input
@@ -40,7 +40,6 @@ const TasksPanel = ({ isPanelOpen, onClose, height }: TasksPanelProps) => {
 interface TasksPanelProps {
   isPanelOpen: boolean;
   onClose: () => void;
-  height: number;
 }
 
 export default TasksPanel;

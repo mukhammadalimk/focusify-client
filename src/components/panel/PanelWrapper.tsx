@@ -12,7 +12,6 @@ const panelAnimation = {
 const PanelWrapper = ({
   isPanelOpen,
   onClose,
-  height,
   children,
 }: PropsWithChildren<PanelWrapperProps>) => {
   const [isVisible, setIsVisible] = useState(isPanelOpen);
@@ -40,7 +39,10 @@ const PanelWrapper = ({
           <motion.div
             role="dialog"
             aria-hidden={!isPanelOpen}
-            style={{ height: height ? `${height}px` : "max-content" }}
+            style={{
+              height: "max-content",
+              maxHeight: "90%",
+            }}
             className="panel-wrapper"
             {...panelAnimation}
             onClick={(e) => e.stopPropagation()}
@@ -56,7 +58,6 @@ const PanelWrapper = ({
 interface PanelWrapperProps {
   isPanelOpen: boolean;
   onClose: () => void;
-  height?: number;
 }
 
 export default PanelWrapper;

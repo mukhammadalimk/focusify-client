@@ -27,7 +27,7 @@ const TaskCompletedModal = ({
   return (
     <ModalBackdrop isOpen={isModalOpen} containerId="ipad-pro-root">
       <motion.div
-        className="bg-white dark:bg-[#181A20] w-full h-full text-center z-55"
+        className="bg-white dark:bg-[#181A20] w-full h-full text-center z-51"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
