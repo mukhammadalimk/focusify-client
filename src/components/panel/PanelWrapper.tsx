@@ -41,7 +41,7 @@ const PanelWrapper = ({
             aria-hidden={!isPanelOpen}
             style={{
               height: "max-content",
-              maxHeight: "90%",
+              maxHeight: "95%",
             }}
             className="panel-wrapper"
             {...panelAnimation}

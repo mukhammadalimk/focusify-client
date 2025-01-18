@@ -3,6 +3,7 @@ import PanelHeader from "../panel/PanelHeader";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { useMemo, useState } from "react";
 import { CheckIcon, TagFillIcon } from "../icons";
+import ProjectsPanel from "./ProjectsPanel";
 
 interface Tag {
   id: string;
@@ -23,6 +24,7 @@ const tags: Tag[] = [
 
 const TagsPanel = ({ isPanelOpen, onClose }: TagsPanelProps) => {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
+  const [projectsPanelOpen, setProjectsPanelOpen] = useState(false);
 
   const tagsMap = useMemo(() => {
     return new Map(tags.map((tag) => [tag.id, tag]));
@@ -48,6 +50,10 @@ const TagsPanel = ({ isPanelOpen, onClose }: TagsPanelProps) => {
 
   return (
     <>
+      <ProjectsPanel
+        isPanelOpen={projectsPanelOpen}
+        onClose={() => setProjectsPanelOpen(false)}
+      />
       <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
         <PanelHeader title="Tags" withIcon />
 
@@ -74,7 +80,14 @@ const TagsPanel = ({ isPanelOpen, onClose }: TagsPanelProps) => {
             onClick={onClose}
           />
 
-          <PrimaryButton text="Next" className="bg-[#FF6347] text-white" />
+          <PrimaryButton
+            text="Next"
+            className="bg-[#FF6347] text-white"
+            onClick={() => {
+              onClose();
+              setProjectsPanelOpen(true);
+            }}
+          />
         </div>
       </PanelWrapper>
     </>
