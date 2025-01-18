@@ -31,38 +31,36 @@ const ProjectsPanel = ({ isPanelOpen, onClose }: ProjectsPanelProps) => {
   };
 
   return (
-    <>
-      <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
-        <PanelHeader title="Projects" withIcon />
+    <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
+      <PanelHeader title="Projects" withIcon />
 
-        <div>
-          {projects.map((item) => (
-            <div
-              className="grid items-center grid-cols-[max-content_1fr_max-content] gap-4 py-4 break_500:gap-6 break_500:py-5 cursor-pointer border-b border-[#EEEEEE] dark:border-[#35383F] last:border-b-0 select-none"
-              key={item.id}
-              onClick={() => onSelectProject(item.id)}
-            >
-              <SuitcaseFillIcon
-                className="w-7 h-7"
-                style={{ color: item.color, fill: item.color }}
-              />
-              <h6 className="header-6 font-semibold">{item.label}</h6>
-              {selectedProject === item.id && <CheckIcon className="w-7 h-7" />}
-            </div>
-          ))}
-        </div>
+      <div className="overflow-y-auto no-scrollbar">
+        {projects.map((item) => (
+          <div
+            className="grid items-center grid-cols-[max-content_1fr_max-content] gap-4 py-4 break_500:gap-6 break_500:py-5 cursor-pointer border-b border-[#EEEEEE] dark:border-[#35383F] last:border-b-0 select-none"
+            key={item.id}
+            onClick={() => onSelectProject(item.id)}
+          >
+            <SuitcaseFillIcon
+              className="w-7 h-7"
+              style={{ color: item.color, fill: item.color }}
+            />
+            <h6 className="header-6 font-semibold">{item.label}</h6>
+            {selectedProject === item.id && <CheckIcon className="w-7 h-7" />}
+          </div>
+        ))}
+      </div>
 
-        <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6">
-          <PrimaryButton
-            text="Cancel"
-            className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
-            onClick={onClose}
-          />
+      <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6">
+        <PrimaryButton
+          text="Cancel"
+          className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
+          onClick={onClose}
+        />
 
-          <PrimaryButton text="Next" className="bg-[#FF6347] text-white" />
-        </div>
-      </PanelWrapper>
-    </>
+        <PrimaryButton text="Next" className="bg-[#FF6347] text-white" />
+      </div>
+    </PanelWrapper>
   );
 };
 

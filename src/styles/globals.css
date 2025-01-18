@@ -22,7 +22,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
   .input-autofill:-webkit-autofill {
     /* Dark theme */
     box-shadow: 0 0 0px 100px #1f222a inset;

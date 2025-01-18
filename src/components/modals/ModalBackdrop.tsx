@@ -20,8 +20,6 @@ const ModalBackdrop: React.FC<ModalBackdropProps> = ({
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
-
   return (
     <Portal containerId={containerId}>
       <motion.div

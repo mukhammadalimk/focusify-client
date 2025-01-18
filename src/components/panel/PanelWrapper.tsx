@@ -26,8 +26,6 @@ const PanelWrapper = ({
     }
   }, [isPanelOpen]);
 
-  if (!isVisible) return null;
-
   return (
     <ModalBackdrop
       isOpen={isVisible}
@@ -41,7 +39,7 @@ const PanelWrapper = ({
             aria-hidden={!isPanelOpen}
             style={{
               height: "max-content",
-              maxHeight: "95%",
+              maxHeight: "85%",
             }}
             className="panel-wrapper"
             {...panelAnimation}

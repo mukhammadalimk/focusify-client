@@ -5,20 +5,62 @@ import FlagIcon from "../icons/FlagIcon";
 import { SuitcaseIcon, TagIcon } from "../icons";
 import PrimaryButton from "../buttons/PrimaryButton";
 import DueDatePanel from "./DueDatePanel";
+import PriorityPanel from "./PriorityPanel";
+import TagsPanel from "./TagsPanel";
+import ProjectsPanel from "./ProjectsPanel";
 
 const AddTaskPanel = ({ isPanelOpen, onClose }: AddTaskPanelProps) => {
   const [estimatedPomodoros, setEstimatedPomodoros] = useState<number | null>(
     null
   );
+  const [modals, setModals] = useState({
+    dueDate: false,
+    priority: false,
+    tags: false,
+    projects: false,
+  });
 
-  const [dueDatePanel, setDueDatePanel] = useState(false);
+  const onOpenModal = (type: string) => {
+    setModals((prev) => {
+      return { ...prev, [type]: true };
+    });
+  };
+
+  const onCloseModal = (type: string) => {
+    setModals((prev) => {
+      return { ...prev, [type]: false };
+    });
+  };
 
   return (
     <>
-      <DueDatePanel
-        isPanelOpen={dueDatePanel}
-        onClose={() => setDueDatePanel(false)}
-      />
+      {modals.dueDate && (
+        <DueDatePanel
+          isPanelOpen={modals.dueDate}
+          onClose={() => onCloseModal("dueDate")}
+        />
+      )}
+
+      {modals.priority && (
+        <PriorityPanel
+          isPanelOpen={modals.priority}
+          onClose={() => onCloseModal("priority")}
+        />
+      )}
+
+      {modals.tags && (
+        <TagsPanel
+          isPanelOpen={modals.tags}
+          onClose={() => onCloseModal("tags")}
+        />
+      )}
+
+      {modals.projects && (
+        <ProjectsPanel
+          isPanelOpen={modals.projects}
+          onClose={() => onCloseModal("projects")}
+        />
+      )}
 
       <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
         <input
@@ -53,19 +95,28 @@ const AddTaskPanel = ({ isPanelOpen, onClose }: AddTaskPanelProps) => {
 
         <div className="my-6 flex justify-between items-center">
           <div className="flex gap-8">
-            <SunIcon className="w-[28px] h-[28px] text-[#4AAF57]" />
-            <FlagIcon className="w-[28px] h-[28px]" />
-            <TagIcon className="w-[28px] h-[28px]" />
-            <SuitcaseIcon className="w-[28px] h-[28px]" />
+            <SunIcon
+              className="w-[28px] h-[28px] cursor-pointer"
+              onClick={() => onOpenModal("dueDate")}
+            />
+            <FlagIcon
+              className="w-[28px] h-[28px] cursor-pointer"
+              onClick={() => onOpenModal("priority")}
+            />
+            <TagIcon
+              className="w-[28px] h-[28px] cursor-pointer"
+              onClick={() => onOpenModal("tags")}
+            />
+            <SuitcaseIcon
+              className="w-[28px] h-[28px] cursor-pointer"
+              onClick={() => onOpenModal("projects")}
+            />
           </div>
 
           <PrimaryButton
             text="Add"
             className="bg-[#CC4F39] h-[43px] w-[120px] !text-[16px] text-white"
-            onClick={() => {
-              onClose();
-              setDueDatePanel(true);
-            }}
+            onClick={() => onClose()}
           />
         </div>
       </PanelWrapper>

@@ -40,34 +40,38 @@ interface MenuInitialState {
 const PomodoroActionMenu = () => {
   const [menusState, setMenusState] =
     useState<MenuInitialState>(menusInitialState);
-  const [height, setHeight] = useState(0);
 
   const onToggleMenuItem = (val: ModeMenu) => {
-    if (val === ModeMenu.WhiteNoise) {
-      const ipadWrapper = document.getElementById("ipad-pro") as HTMLDivElement;
-      setHeight((ipadWrapper.clientHeight / 100) * 78);
-    }
+    // if (val === ModeMenu.WhiteNoise) {
+    //   const ipadWrapper = document.getElementById("ipad-pro") as HTMLDivElement;
+    //   setHeight((ipadWrapper.clientHeight / 100) * 78);
+    // }
 
     setMenusState((prev) => ({ ...prev, [val]: !prev[val] }));
   };
 
   return (
     <>
-      <StrictModePanel
-        isPanelOpen={menusState.strictMode}
-        onClose={() => onToggleMenuItem(ModeMenu.StrictMode)}
-      />
+      {menusState.strictMode && (
+        <StrictModePanel
+          isPanelOpen={menusState.strictMode}
+          onClose={() => onToggleMenuItem(ModeMenu.StrictMode)}
+        />
+      )}
 
-      <TimerModePanel
-        isPanelOpen={menusState.timerMode}
-        onClose={() => onToggleMenuItem(ModeMenu.TimerMode)}
-      />
+      {menusState.timerMode && (
+        <TimerModePanel
+          isPanelOpen={menusState.timerMode}
+          onClose={() => onToggleMenuItem(ModeMenu.TimerMode)}
+        />
+      )}
 
-      <WhiteNoisePanel
-        isPanelOpen={menusState.whiteNoise}
-        onClose={() => onToggleMenuItem(ModeMenu.WhiteNoise)}
-        height={height}
-      />
+      {menusState.whiteNoise && (
+        <WhiteNoisePanel
+          isPanelOpen={menusState.whiteNoise}
+          onClose={() => onToggleMenuItem(ModeMenu.WhiteNoise)}
+        />
+      )}
 
       <div className="flex z-10 justify-evenly w-full select-none">
         {menuItems.map((menu) => (

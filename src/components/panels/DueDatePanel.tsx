@@ -8,7 +8,6 @@ import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
 import { isBefore, startOfDay } from "date-fns";
 import PrimaryButton from "../buttons/PrimaryButton";
-import PriorityPanel from "./PriorityPanel";
 
 const dueDates = [
   {
@@ -39,7 +38,6 @@ const dueDates = [
 ];
 
 const DueDatePanel = ({ isPanelOpen, onClose }: DueDatePanelProps) => {
-  const [priorityPanel, setPriorityPanel] = useState(false);
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   const disableOldDates = (date: Date) => {
@@ -48,64 +46,52 @@ const DueDatePanel = ({ isPanelOpen, onClose }: DueDatePanelProps) => {
   };
 
   return (
-    <>
-      <PriorityPanel
-        isPanelOpen={priorityPanel}
-        onClose={() => setPriorityPanel(false)}
-      />
+    <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
+      <PanelHeader title="Due Date" />
 
-      <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
-        <PanelHeader title="Due Date" />
-
-        <div className="">
-          <div className="flex justify-around pt-5 pb-6">
-            {dueDates.map((item) => (
+      <div className="overflow-y-auto no-scrollbar">
+        <div className="flex justify-around pt-5 pb-6">
+          {dueDates.map((item) => (
+            <div
+              className="flex flex-col gap-2 items-center w-[90px]"
+              key={item.id}
+            >
               <div
-                className="flex flex-col gap-2 items-center w-[90px]"
-                key={item.id}
+                className="w-[52px] h-[52px] rounded-full grid place-items-center"
+                style={{ backgroundColor: item.color }}
               >
-                <div
-                  className="w-[52px] h-[52px] rounded-full grid place-items-center"
-                  style={{ backgroundColor: item.color }}
-                >
-                  {item.icon}
-                </div>
-                <span className="body-medium-1-6 font-medium">
-                  {item.title}
-                </span>
+                {item.icon}
               </div>
-            ))}
-          </div>
-
-          <div>
-            <Calendar
-              mode="single"
-              selected={date}
-              onSelect={setDate}
-              className="rounded-[12px] border border-[#EEEEEE] dark:border-[#35383F] dark:bg-[#1F222A] w-max mx-auto "
-              disabled={disableOldDates}
-            />
-          </div>
-
-          <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6 mt-5">
-            <PrimaryButton
-              text="Cancel"
-              className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
-              onClick={onClose}
-            />
-
-            <PrimaryButton
-              text="Next"
-              className="bg-[#FF6347] text-white"
-              onClick={() => {
-                onClose();
-                setPriorityPanel(true);
-              }}
-            />
-          </div>
+              <span className="body-medium-1-6 font-medium">{item.title}</span>
+            </div>
+          ))}
         </div>
-      </PanelWrapper>
-    </>
+
+        <div>
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded-[12px] border border-[#EEEEEE] dark:border-[#35383F] dark:bg-[#1F222A] w-max mx-auto "
+            disabled={disableOldDates}
+          />
+        </div>
+      </div>
+
+      <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6 mt-5">
+        <PrimaryButton
+          text="Cancel"
+          className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
+          onClick={onClose}
+        />
+
+        <PrimaryButton
+          text="Next"
+          className="bg-[#FF6347] text-white"
+          onClick={() => onClose()}
+        />
+      </div>
+    </PanelWrapper>
   );
 };
 
