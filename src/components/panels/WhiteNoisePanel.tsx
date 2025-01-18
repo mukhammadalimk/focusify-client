@@ -1,17 +1,13 @@
 import { whiteNoises } from "@/data";
 import PanelButtons from "./PanelButtons";
-import CheckIcon from "../icons/CheckIcon";
 import { getSavedWhiteNoise } from "@/utils";
 import PanelHeader from "../panel/PanelHeader";
 import PanelWrapper from "../panel/PanelWrapper";
 import { LOCAL_STORAGE_KEYS, WhiteNoise } from "@/types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { CheckIcon } from "../icons";
 
-const WhiteNoisePanel = ({
-  isPanelOpen,
-  onClose,
-  height,
-}: WhiteNoisePanelProps) => {
+const WhiteNoisePanel = ({ isPanelOpen, onClose }: WhiteNoisePanelProps) => {
   const [whiteNoise, setWhiteNoise] = useState<WhiteNoise>(WhiteNoise.None);
   const memoizedWhiteNoises = useMemo(() => whiteNoises, []);
 
@@ -29,7 +25,7 @@ const WhiteNoisePanel = ({
   }, []);
 
   return (
-    <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose} height={height}>
+    <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
       <PanelHeader title="White Noise" />
 
       <div
@@ -60,7 +56,6 @@ const WhiteNoisePanel = ({
 interface WhiteNoisePanelProps {
   isPanelOpen: boolean;
   onClose: () => void;
-  height: number;
 }
 
 export default React.memo(WhiteNoisePanel);

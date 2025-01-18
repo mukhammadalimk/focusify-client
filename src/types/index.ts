@@ -54,3 +54,10 @@ export interface NotificationItemType {
   created_at: Date;
   isRead: boolean;
 }
+
+export enum Priority {
+  High = "High",
+  Medium = "Medium",
+  Low = "Low",
+  No = "No",
+}

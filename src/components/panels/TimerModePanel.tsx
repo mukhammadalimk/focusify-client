@@ -1,5 +1,4 @@
 import PanelButtons from "./PanelButtons";
-import CheckIcon from "../icons/CheckIcon";
 import { getSavedTimerMode } from "@/utils";
 import PanelHeader from "../panel/PanelHeader";
 import InfinityIcon from "../icons/InfinityIcon";
@@ -7,6 +6,7 @@ import PanelWrapper from "../panel/PanelWrapper";
 import ArrowRightIcon from "../icons/ArrowRightIcon";
 import { LOCAL_STORAGE_KEYS, TimerMode } from "@/types";
 import React, { useCallback, useEffect, useState } from "react";
+import { CheckIcon } from "../icons";
 
 // Array of timer modes to iterate over
 const timerModes = [

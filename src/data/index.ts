@@ -4,6 +4,7 @@ import {
   StrictModeItem,
   WhiteNoise,
   WhiteNoiseItem,
+  Priority,
 } from "@/types";
 
 export const tasks = [
@@ -197,4 +198,12 @@ export const sampleNotifications: NotificationItemType[] = [
     created_at: new Date("2025-01-02T17:50:00Z"),
     isRead: true,
   },
+];
+
+//--------------------------------------
+export const priorities = [
+  { id: 1, label: "High Priority", color: "#F54336", value: Priority.High },
+  { id: 2, label: "Medium Priority", color: "#FF981F", value: Priority.Medium },
+  { id: 3, label: "Low Priority", color: "#4AAF57", value: Priority.Low },
+  { id: 4, label: "No Priority", color: "#607D8A", value: Priority.No },
 ];

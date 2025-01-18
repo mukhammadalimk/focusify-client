@@ -9,6 +9,7 @@ import SuitcaseSvg from "@/assets/icons/suitcase-icon.svg";
 import PaperPlusSvg from "@/assets/icons/paper-plus-icon.svg";
 import TagSvg from "@/assets/icons/tag-icon.svg";
 import AddModalSvg from "@/assets/icons/add-modal.svg";
+import CheckSvg from "@/assets/icons/check-icon.svg";
 
 // Wrapper function to allow all props (className, onClick, etc.)
 // Wrapper function with displayName and full SVGProps support
@@ -31,3 +32,4 @@ export const SuitcaseIcon = IconWrapper(SuitcaseSvg);
 export const PaperPlusIcon = IconWrapper(PaperPlusSvg);
 export const TagIcon = IconWrapper(TagSvg);
 export const AddModalIcon = IconWrapper(AddModalSvg);
+export const CheckIcon = IconWrapper(CheckSvg);
