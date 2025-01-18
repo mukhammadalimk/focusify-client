@@ -53,7 +53,7 @@ const AddTaskPanel = ({ isPanelOpen, onClose }: AddTaskPanelProps) => {
 
         <div className="my-6 flex justify-between items-center">
           <div className="flex gap-8">
-            <SunIcon className="w-[28px] h-[28px]" />
+            <SunIcon className="w-[28px] h-[28px] text-[#4AAF57]" />
             <FlagIcon className="w-[28px] h-[28px]" />
             <TagIcon className="w-[28px] h-[28px]" />
             <SuitcaseIcon className="w-[28px] h-[28px]" />

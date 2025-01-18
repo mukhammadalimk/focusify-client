@@ -6,14 +6,20 @@ import { useState } from "react";
 import { CheckIcon } from "../icons";
 import { Priority } from "@/types";
 import { priorities } from "@/data";
+import TagsPanel from "./TagsPanel";
 
 const PriorityPanel = ({ isPanelOpen, onClose }: PriorityPanelProps) => {
   const [priority, setPriority] = useState<Priority>(Priority.High);
+  const [tagsPanelOpen, setTagsPanelOpen] = useState(false);
 
   return (
     <>
+      <TagsPanel
+        isPanelOpen={tagsPanelOpen}
+        onClose={() => setTagsPanelOpen(false)}
+      />
       <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
-        <PanelHeader title="Due Date" />
+        <PanelHeader title="Priority" />
 
         <div>
           {priorities.map((item) => (
@@ -41,7 +47,14 @@ const PriorityPanel = ({ isPanelOpen, onClose }: PriorityPanelProps) => {
             onClick={onClose}
           />
 
-          <PrimaryButton text="Next" className="bg-[#FF6347] text-white" />
+          <PrimaryButton
+            text="Next"
+            className="bg-[#FF6347] text-white"
+            onClick={() => {
+              onClose();
+              setTagsPanelOpen(true);
+            }}
+          />
         </div>
       </PanelWrapper>
     </>
