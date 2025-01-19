@@ -6,7 +6,12 @@ import { TaskItemProps } from "./TaskItem";
 import SuitcaseIcon from "../icons/SuitcaseIcon";
 import TimerCircleIcon from "../icons/TimerCircleIcon";
 
-const TaskBottom = ({ numberOfPomodoros, projectName }: TaskBottomProps) => {
+const TaskBottom = ({
+  numberOfPomodoros,
+  projectName,
+  completed,
+  deleted,
+}: TaskBottomProps) => {
   return (
     <div className="flex justify-between gap-3 break_400:gap-4 items-center">
       <div className="flex gap-3 break_400:gap-4 items-center">
@@ -35,16 +40,21 @@ const TaskBottom = ({ numberOfPomodoros, projectName }: TaskBottomProps) => {
         </div>
       </div>
 
-      <div>
-        <PlayCircleIcon
-          className="cursor-pointer w-6 h-6 break_400:w-auto break_400:h-auto"
-          aria-hidden="true"
-        />
-      </div>
+      {!completed && !deleted && (
+        <div>
+          <PlayCircleIcon
+            className="cursor-pointer w-6 h-6 break_400:w-auto break_400:h-auto"
+            aria-hidden="true"
+          />
+        </div>
+      )}
     </div>
   );
 };
 
-type TaskBottomProps = Pick<TaskItemProps, "projectName" | "numberOfPomodoros">;
+type TaskBottomProps = Pick<
+  TaskItemProps,
+  "projectName" | "numberOfPomodoros" | "completed" | "deleted"
+>;
 
 export default TaskBottom;

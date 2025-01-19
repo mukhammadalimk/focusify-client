@@ -1,8 +1,9 @@
 import { TaskItemProps } from "./TaskItem";
 import CircleEmptyIcon from "../icons/CircleEmptyIcon";
 import CircleCheckmarkIcon from "../icons/CircleCheckmarkIcon";
+import { ThreeDotsIcon } from "../icons";
 
-const TaskTop = ({ taskTitle, completed }: TaskTopProps) => {
+const TaskTop = ({ taskTitle, completed, deleted }: TaskTopProps) => {
   return (
     <div className="flex justify-between gap-3 items-center">
       <h6
@@ -13,11 +14,13 @@ const TaskTop = ({ taskTitle, completed }: TaskTopProps) => {
         {taskTitle}
       </h6>
 
-      {completed ? <CircleCheckmarkIcon /> : <CircleEmptyIcon />}
+      {completed && !deleted && <CircleCheckmarkIcon />}
+      {!completed && !deleted && <CircleEmptyIcon />}
+      {deleted && <ThreeDotsIcon />}
     </div>
   );
 };
 
-type TaskTopProps = Pick<TaskItemProps, "taskTitle" | "completed">;
+type TaskTopProps = Pick<TaskItemProps, "taskTitle" | "completed" | "deleted">;
 
 export default TaskTop;

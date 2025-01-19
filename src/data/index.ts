@@ -28,6 +28,7 @@ export const tasks = [
       },
     ],
     completed: false,
+    deleted: false,
   },
   {
     id: "2",
@@ -49,6 +50,7 @@ export const tasks = [
       },
     ],
     completed: false,
+    deleted: false,
   },
   {
     id: "3",
@@ -69,7 +71,8 @@ export const tasks = [
         color: "#9D28AC",
       },
     ],
-    completed: true,
+    completed: false,
+    deleted: false,
   },
   {
     id: "4",
@@ -90,7 +93,102 @@ export const tasks = [
         color: "#9D28AC",
       },
     ],
+    completed: false,
+    deleted: false,
+  },
+];
+
+export const completedTasks = [
+  {
+    id: "1",
+    taskTitle: "Design User Experience (UX)",
+    projectName: "Pomodoro App",
+    numberOfPomodoros: 8,
+    tags: [
+      {
+        name: "Research",
+        color: "#8BC255",
+      },
+      {
+        name: "Productive",
+        color: "#8BC255",
+      },
+      {
+        name: "Work",
+        color: "#9D28AC",
+      },
+    ],
     completed: true,
+    deleted: false,
+  },
+  {
+    id: "2",
+    taskTitle: "Design User Interface (UI)",
+    projectName: "Pomodoro App",
+    numberOfPomodoros: 3,
+    tags: [
+      {
+        name: "Research",
+        color: "#1A96F0",
+      },
+      {
+        name: "Productive",
+        color: "#1A96F0",
+      },
+      {
+        name: "Work",
+        color: "#1A96F0",
+      },
+    ],
+    deleted: false,
+    completed: true,
+  },
+];
+
+export const delegedtasks = [
+  {
+    id: "1",
+    taskTitle: "Design User Experience (UX)",
+    projectName: "Pomodoro App",
+    numberOfPomodoros: 8,
+    tags: [
+      {
+        name: "Research",
+        color: "#8BC255",
+      },
+      {
+        name: "Productive",
+        color: "#8BC255",
+      },
+      {
+        name: "Work",
+        color: "#9D28AC",
+      },
+    ],
+    completed: true,
+    deleted: true,
+  },
+  {
+    id: "2",
+    taskTitle: "Design User Interface (UI)",
+    projectName: "Pomodoro App",
+    numberOfPomodoros: 3,
+    tags: [
+      {
+        name: "Research",
+        color: "#1A96F0",
+      },
+      {
+        name: "Productive",
+        color: "#1A96F0",
+      },
+      {
+        name: "Work",
+        color: "#1A96F0",
+      },
+    ],
+    completed: false,
+    deleted: true,
   },
 ];
 
