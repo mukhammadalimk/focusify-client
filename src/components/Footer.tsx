@@ -5,13 +5,13 @@ import CalendarGrayShadeIcon from "./icons/CalendarGrayShadeIcon";
 import PomodoroWhiteIcon from "./icons/PomodoroWhiteIcon";
 import PomodoroRedIcon from "./icons/PomodorRedIcon";
 import SettingsRedIcon from "./icons/SettingsRedIcon";
-import SettingsWhiteIcon from "./icons/SettingsWhiteIcon";
 import ManageWhiteIcon from "./icons/ManageWhiteIcon";
 import ManageRedIcon from "./icons/ManageRedIcon";
 import ReportRedIcon from "./icons/ReportRedIcon";
 import ReportWhiteIcon from "./icons/ReportWhiteIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SettingsWhiteIcon } from "./icons";
 
 const Footer = () => {
   const pathname = usePathname(); // Get the current path

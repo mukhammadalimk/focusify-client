@@ -13,6 +13,8 @@ import TagFillSvg from "@/assets/icons/tag-icon-fill.svg";
 import AddModalSvg from "@/assets/icons/add-modal.svg";
 import CheckSvg from "@/assets/icons/check-icon.svg";
 import XSvg from "@/assets/icons/x-icon.svg";
+import ArrowLeftSvg from "@/assets/icons/arrow-left.svg";
+import SettingsWhiteSvg from "@/assets/icons/settings-white.svg";
 
 // Wrapper function to allow all props (className, onClick, etc.)
 // Wrapper function with displayName and full SVGProps support
@@ -39,3 +41,5 @@ export const CheckIcon = IconWrapper(CheckSvg);
 export const TagFillIcon = IconWrapper(TagFillSvg);
 export const SuitcaseFillIcon = IconWrapper(SuitcaseFillSvg);
 export const XIcon = IconWrapper(XSvg);
+export const ArrowLeftIcon = IconWrapper(ArrowLeftSvg);
+export const SettingsWhiteIcon = IconWrapper(SettingsWhiteSvg);

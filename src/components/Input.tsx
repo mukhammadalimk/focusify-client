@@ -7,6 +7,7 @@ import EyeOffIcon from "./icons/EyeOffIcon";
 import LockIcon from "./icons/LockIcon";
 import EyeIcon from "./icons/EyeIcon";
 import { SuitcaseIcon } from "./icons";
+import PlusIcon from "./icons/PlusIcon";
 
 export enum IconName {
   Email = "email",
@@ -16,6 +17,7 @@ export enum IconName {
   Name = "name",
   Search = "search",
   Project = "project",
+  Plus = "plus",
 }
 
 const getIcon = (iconName: IconName) => {
@@ -47,6 +49,11 @@ const getIcon = (iconName: IconName) => {
     case IconName.Project:
       return (
         <SuitcaseIcon className="text-[#212121] dark:text-[#fff] absolute bottom-[22px] left-5 w-5 h-5" />
+      );
+
+    case IconName.Plus:
+      return (
+        <PlusIcon className="text-[#212121] dark:text-[#fff] absolute top-1/2 -translate-y-1/2 left-5 w-6 h-6 flex" />
       );
 
     default:

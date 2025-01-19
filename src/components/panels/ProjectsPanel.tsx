@@ -46,7 +46,9 @@ const ProjectsPanel = ({ isPanelOpen, onClose }: ProjectsPanelProps) => {
               style={{ color: item.color, fill: item.color }}
             />
             <h6 className="header-6 font-semibold">{item.label}</h6>
-            {selectedProject === item.id && <CheckIcon className="w-7 h-7" />}
+            {selectedProject === item.id && (
+              <CheckIcon className="w-7 h-7 text-[#FF6347]" />
+            )}
           </div>
         ))}
       </div>

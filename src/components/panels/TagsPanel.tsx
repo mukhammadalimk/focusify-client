@@ -60,7 +60,7 @@ const TagsPanel = ({ isPanelOpen, onClose }: TagsPanelProps) => {
             <TagFillIcon className="w-7 h-7" style={{ color: item.color }} />
             <h6 className="header-6 font-semibold">{item.label}</h6>
             {selectedTags?.find((tag) => tag.id === item.id) && (
-              <CheckIcon className="w-7 h-7" />
+              <CheckIcon className="w-7 h-7 text-[#FF6347]" />
             )}
           </div>
         ))}

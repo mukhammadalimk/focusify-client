@@ -28,7 +28,9 @@ const PriorityPanel = ({ isPanelOpen, onClose }: PriorityPanelProps) => {
               <FlagIcon className="fill-white text-white w-7 h-7" />
             </div>
             <h6 className="header-6 font-semibold">{item.label}</h6>
-            {priority === item.value && <CheckIcon className="w-7 h-7" />}
+            {priority === item.value && (
+              <CheckIcon className="w-7 h-7 text-[#FF6347]" />
+            )}
           </div>
         ))}
       </div>

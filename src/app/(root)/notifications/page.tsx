@@ -1,8 +1,7 @@
 "use client";
 
-import ArrowLeftIcon from "@/components/icons/ArrowLeftIcon";
+import { ArrowLeftIcon, SettingsWhiteIcon } from "@/components/icons";
 import LoadingRedIcon from "@/components/icons/LoadingRedIcon";
-import SettingsWhiteIcon from "@/components/icons/SettingsWhiteIcon";
 import NotificationItem from "@/components/notifications/NotificationItem";
 import TopNavbarWrapper from "@/components/TopNavbarWrapper";
 import { sampleNotifications } from "@/data";
@@ -26,7 +25,7 @@ const Notifications = () => {
           <ArrowLeftIcon className="fill-[#212121] dark:fill-[#fff] cursor-pointer" />
         </Link>
 
-        <h4 className="font-bold header-4 md:text-[28px]">Notifications</h4>
+        <h4 className="font-bold header-4">Notifications</h4>
 
         <SettingsWhiteIcon className="dark:fill-white fill-[#212121] h-7 w-7" />
       </TopNavbarWrapper>

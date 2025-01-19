@@ -27,6 +27,7 @@ export const tasks = [
         color: "#9D28AC",
       },
     ],
+    completed: false,
   },
   {
     id: "2",
@@ -47,6 +48,7 @@ export const tasks = [
         color: "#1A96F0",
       },
     ],
+    completed: false,
   },
   {
     id: "3",
@@ -67,6 +69,7 @@ export const tasks = [
         color: "#9D28AC",
       },
     ],
+    completed: true,
   },
   {
     id: "4",
@@ -87,6 +90,7 @@ export const tasks = [
         color: "#9D28AC",
       },
     ],
+    completed: true,
   },
 ];
 

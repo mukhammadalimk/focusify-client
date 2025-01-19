@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import ArrowLeftIcon from "../icons/ArrowLeftIcon";
+import { ArrowLeftIcon } from "../icons";
 
 const BackIconBox = ({ link, className }: BackIconBox) => {
   return (

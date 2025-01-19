@@ -8,6 +8,7 @@ import {
   SuitcaseIcon,
   TrashIcon,
 } from "./icons";
+import Link from "next/link";
 
 const ProjectBox = ({
   color,
@@ -15,9 +16,11 @@ const ProjectBox = ({
   title,
   hours,
   numberOfPomodoros,
+  link,
 }: ProjectBoxProps) => {
   return (
-    <div
+    <Link
+      href={link}
       className="border flex flex-col rounded-[8px] cursor-pointer max-h-[98px] min-w-[163px] p-2.5 gap-1 break_400:p-3 break_400:gap-2 break_500:p-4"
       style={{ borderColor: color }}
     >
@@ -30,7 +33,7 @@ const ProjectBox = ({
         <span>{hours}</span>
         <span>({numberOfPomodoros})</span>
       </h5>
-    </div>
+    </Link>
   );
 };
 
@@ -38,6 +41,7 @@ interface ProjectBoxProps {
   color: string;
   type: ProjectType;
   title: string;
+  link: string;
   hours?: string;
   numberOfPomodoros?: number;
 }

@@ -24,11 +24,11 @@ const Manage = () => {
             type="text"
             text="Search task..."
             placeholder="Search task..."
-            id="select-task"
+            id="search-task"
             iconName={IconName.Search}
             withoutLabel
             inputStyle="font-normal"
-            containerStyle="max-w-none w-full"
+            containerStyle="max-w-none"
           />
 
           <GridSection>
@@ -38,6 +38,7 @@ const Manage = () => {
               title="Today"
               hours="6h 25m"
               numberOfPomodoros={4}
+              link="/today"
             />
 
             <ProjectBox
@@ -46,6 +47,7 @@ const Manage = () => {
               title="Tomorrow"
               hours="6h 40m"
               numberOfPomodoros={4}
+              link="/tomorrow"
             />
 
             <ProjectBox
@@ -54,6 +56,7 @@ const Manage = () => {
               title="This Week"
               hours="13h 20m"
               numberOfPomodoros={10}
+              link="/this-week"
             />
 
             <ProjectBox
@@ -62,6 +65,7 @@ const Manage = () => {
               title="Planned"
               hours="20h 50m"
               numberOfPomodoros={18}
+              link="/planned"
             />
 
             <ProjectBox
@@ -70,6 +74,7 @@ const Manage = () => {
               title="Completed"
               hours="100h 20m"
               numberOfPomodoros={41}
+              link="/completed"
             />
 
             <ProjectBox
@@ -78,6 +83,7 @@ const Manage = () => {
               title="Trash"
               hours="5h 20m"
               numberOfPomodoros={6}
+              link="/trash"
             />
           </GridSection>
 
@@ -97,6 +103,7 @@ const Manage = () => {
                 title="Pomodoro App"
                 hours="6h 25m"
                 numberOfPomodoros={4}
+                link="/manage"
               />
             ))}
           </GridSection>
