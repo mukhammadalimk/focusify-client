@@ -1,11 +1,11 @@
 import PanelWrapper from "../panel/PanelWrapper";
 import PanelHeader from "../panel/PanelHeader";
-import PrimaryButton from "../buttons/PrimaryButton";
 import { FlagIcon } from "lucide-react";
 import { useState } from "react";
 import { CheckIcon } from "../icons";
 import { Priority } from "@/types";
 import { priorities } from "@/data";
+import PanelButtons from "./PanelButtons";
 
 const PriorityPanel = ({ isPanelOpen, onClose }: PriorityPanelProps) => {
   const [priority, setPriority] = useState<Priority>(Priority.High);
@@ -33,19 +33,11 @@ const PriorityPanel = ({ isPanelOpen, onClose }: PriorityPanelProps) => {
         ))}
       </div>
 
-      <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6">
-        <PrimaryButton
-          text="Cancel"
-          className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
-          onClick={onClose}
-        />
-
-        <PrimaryButton
-          text="Next"
-          className="bg-[#FF6347] text-white"
-          onClick={() => onClose()}
-        />
-      </div>
+      <PanelButtons
+        onCancel={onClose}
+        onSave={onClose}
+        texts={["Cancel", "OK"]}
+      />
     </PanelWrapper>
   );
 };

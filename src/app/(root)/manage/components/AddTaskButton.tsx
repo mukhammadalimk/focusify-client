@@ -3,12 +3,29 @@ import React, { useState } from "react";
 import PlusIcon from "@/components/icons/PlusIcon";
 import AddModal from "@/components/modals/AddModal";
 import AddTaskPanel from "@/components/panels/AddTaskPanel";
+import AddProjectOrTagModal from "@/components/modals/AddProjectOrTagModal";
 
 const AddTask = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const onToggleModal = () => setModalOpen((prev) => !prev);
 
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [panels, setPanels] = useState({
+    taskPanel: false,
+    projectsPanel: false,
+    tagsPanel: false,
+  });
+
+  const onOpenPanel = (type: string) => {
+    setPanels((prev) => {
+      return { ...prev, [type]: true };
+    });
+  };
+
+  const onClosePanel = (type: string) => {
+    setPanels((prev) => {
+      return { ...prev, [type]: false };
+    });
+  };
 
   return (
     <>
@@ -16,14 +33,30 @@ const AddTask = () => {
         <AddModal
           isModalOpen={modalOpen}
           onClose={() => setModalOpen(false)}
-          onOpenPanel={() => setIsPanelOpen(true)}
+          onOpenPanel={onOpenPanel}
         />
       )}
 
-      {isPanelOpen && (
+      {panels.taskPanel && (
         <AddTaskPanel
-          isPanelOpen={isPanelOpen}
-          onClose={() => setIsPanelOpen(false)}
+          isPanelOpen={panels.taskPanel}
+          onClose={() => onClosePanel("taskPanel")}
+        />
+      )}
+
+      {panels.projectsPanel && (
+        <AddProjectOrTagModal
+          type="Project"
+          isModalOpen={panels.projectsPanel}
+          onClose={() => onClosePanel("projectsPanel")}
+        />
+      )}
+
+      {panels.tagsPanel && (
+        <AddProjectOrTagModal
+          type="Tag"
+          isModalOpen={panels.tagsPanel}
+          onClose={() => onClosePanel("tagsPanel")}
         />
       )}
 

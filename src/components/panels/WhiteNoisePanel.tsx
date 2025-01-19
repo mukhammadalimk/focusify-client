@@ -43,12 +43,18 @@ const WhiteNoisePanel = ({ isPanelOpen, onClose }: WhiteNoisePanelProps) => {
             onClick={() => onSelectWhiteNoise(noise.value)}
           >
             <h5 className="header-5 font-semibold">{noise.label}</h5>
-            {whiteNoise === noise.value && <CheckIcon />}
+            {whiteNoise === noise.value && (
+              <CheckIcon className="text-[#FF6347]" />
+            )}
           </div>
         ))}
       </div>
 
-      <PanelButtons onCancel={onClose} onSave={onSave} />
+      <PanelButtons
+        onCancel={onClose}
+        onSave={onSave}
+        texts={["Cancel", "OK"]}
+      />
     </PanelWrapper>
   );
 };

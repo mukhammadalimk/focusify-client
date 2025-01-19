@@ -20,7 +20,7 @@
   }
 
   .toggle-btn.toggled {
-    background-color: #ff6347;
+    background-color: #ff6347 !important;
   }
 
   .toggle-btn.toggled .thumb {

@@ -131,11 +131,13 @@ const MainContent = () => {
 
   return (
     <>
-      {/* <TaskCompletedModal
-        isModalOpen={taskCompleted}
-        onClose={() => setTaskCompleted(false)}
-        taskName="Create a Design Wireframe"
-      /> */}
+      {taskCompleted && (
+        <TaskCompletedModal
+          isModalOpen={taskCompleted}
+          onClose={() => setTaskCompleted(false)}
+          taskName="Create a Design Wireframe"
+        />
+      )}
 
       <div className="flex flex-1 flex-col mt-10 gap-10 items-center justify-between">
         <PomodoroTimer

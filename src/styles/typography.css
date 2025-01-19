@@ -2,11 +2,11 @@
 
 @layer utilities {
   .header-1 {
-    @apply text-5xl leading-[1.6];
+    @apply text-[48px] leading-[1.6];
   }
 
   .header-2 {
-    @apply text-4xl leading-[1.6];
+    @apply text-[36px] leading-[1.6];
   }
 
   .header-3 {
@@ -14,7 +14,7 @@
   }
 
   .header-4 {
-    @apply text-2xl leading-[1.6];
+    @apply text-[24px] leading-[1.6];
   }
 
   .header-5 {

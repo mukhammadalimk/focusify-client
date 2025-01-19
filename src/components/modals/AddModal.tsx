@@ -22,7 +22,7 @@ const AddModal = ({ isModalOpen, onClose, onOpenPanel }: AddModalProps) => {
         <div
           className="border-b border-[#EEEEEE] dark:border-[#35383F] flex gap-4 items-center pb-4 cursor-pointer z-10"
           onClick={() => {
-            onOpenPanel();
+            onOpenPanel("taskPanel");
             onClose();
           }}
         >
@@ -30,11 +30,23 @@ const AddModal = ({ isModalOpen, onClose, onOpenPanel }: AddModalProps) => {
           <span className="body-x-large font-semibold z-10">Task</span>
         </div>
 
-        <div className="border-b border-[#EEEEEE] dark:border-[#35383F] flex gap-4 items-center py-4 cursor-pointer z-10">
+        <div
+          className="border-b border-[#EEEEEE] dark:border-[#35383F] flex gap-4 items-center py-4 cursor-pointer z-10"
+          onClick={() => {
+            onOpenPanel("projectsPanel");
+            onClose();
+          }}
+        >
           <SuitcaseIcon className="z-10" />
           <span className="body-x-large font-semibold z-10">Project</span>
         </div>
-        <div className="flex gap-4 items-center pt-4 cursor-pointer z-10">
+        <div
+          className="flex gap-4 items-center pt-4 cursor-pointer z-10"
+          onClick={() => {
+            onOpenPanel("tagsPanel");
+            onClose();
+          }}
+        >
           <TagIcon className="z-10" />
           <span className="body-x-large font-semibold z-10">Tags</span>
         </div>
@@ -46,7 +58,7 @@ const AddModal = ({ isModalOpen, onClose, onOpenPanel }: AddModalProps) => {
 interface AddModalProps {
   isModalOpen: boolean;
   onClose: () => void;
-  onOpenPanel: () => void;
+  onOpenPanel: (type: string) => void;
 }
 
 export default AddModal;

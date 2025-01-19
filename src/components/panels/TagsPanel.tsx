@@ -1,8 +1,8 @@
 import PanelWrapper from "../panel/PanelWrapper";
 import PanelHeader from "../panel/PanelHeader";
-import PrimaryButton from "../buttons/PrimaryButton";
 import { useMemo, useState } from "react";
 import { CheckIcon, TagFillIcon } from "../icons";
+import PanelButtons from "./PanelButtons";
 
 interface Tag {
   id: string;
@@ -66,19 +66,11 @@ const TagsPanel = ({ isPanelOpen, onClose }: TagsPanelProps) => {
         ))}
       </div>
 
-      <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6">
-        <PrimaryButton
-          text="Cancel"
-          className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
-          onClick={onClose}
-        />
-
-        <PrimaryButton
-          text="Next"
-          className="bg-[#FF6347] text-white"
-          onClick={() => onClose()}
-        />
-      </div>
+      <PanelButtons
+        onCancel={onClose}
+        onSave={onClose}
+        texts={["Cancel", "OK"]}
+      />
     </PanelWrapper>
   );
 };

@@ -4,10 +4,10 @@ import PanelWrapper from "../panel/PanelWrapper";
 import PanelHeader from "../panel/PanelHeader";
 import SunIcon from "../icons/SunIcon";
 import { Calendar2Icon, PlannedIcon, SettingSunIcon } from "../icons";
-import { Calendar } from "@/components/ui/calendar";
-import { useState } from "react";
-import { isBefore, startOfDay } from "date-fns";
-import PrimaryButton from "../buttons/PrimaryButton";
+// import { Calendar } from "@/components/ui/calendar";
+// import { useState } from "react";
+// import { isBefore, startOfDay } from "date-fns";
+import PanelButtons from "./PanelButtons";
 
 const dueDates = [
   {
@@ -38,12 +38,12 @@ const dueDates = [
 ];
 
 const DueDatePanel = ({ isPanelOpen, onClose }: DueDatePanelProps) => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  // const [date, setDate] = useState<Date | undefined>(new Date());
 
-  const disableOldDates = (date: Date) => {
-    const today = startOfDay(new Date()); // Get the start of the current day
-    return isBefore(date, today); // Return true for dates before today
-  };
+  // const disableOldDates = (date: Date) => {
+  //   const today = startOfDay(new Date()); // Get the start of the current day
+  //   return isBefore(date, today); // Return true for dates before today
+  // };
 
   return (
     <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
@@ -67,30 +67,22 @@ const DueDatePanel = ({ isPanelOpen, onClose }: DueDatePanelProps) => {
           ))}
         </div>
 
-        <div>
-          <Calendar
+        <div className="mb-5 w-[349px] h-[361px] border rounded-[12px] mx-auto border-[#F5F5F5] dark:border-[#35383F]">
+          {/* <Calendar
             mode="single"
             selected={date}
             onSelect={setDate}
             className="rounded-[12px] border border-[#EEEEEE] dark:border-[#35383F] dark:bg-[#1F222A] w-max mx-auto "
             disabled={disableOldDates}
-          />
+          /> */}
         </div>
       </div>
 
-      <div className="w-full flex justify-around gap-4 border-t border-[#F5F5F5] dark:border-[#35383F] p-6 mt-5">
-        <PrimaryButton
-          text="Cancel"
-          className="bg-[#FFF3F0] dark:bg-[#35383F] text-[#FF6347] dark:text-white"
-          onClick={onClose}
-        />
-
-        <PrimaryButton
-          text="Next"
-          className="bg-[#FF6347] text-white"
-          onClick={() => onClose()}
-        />
-      </div>
+      <PanelButtons
+        onCancel={onClose}
+        onSave={onClose}
+        texts={["Cancel", "OK"]}
+      />
     </PanelWrapper>
   );
 };

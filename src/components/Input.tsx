@@ -6,6 +6,7 @@ import SearchIcon from "./icons/SearchIcon";
 import EyeOffIcon from "./icons/EyeOffIcon";
 import LockIcon from "./icons/LockIcon";
 import EyeIcon from "./icons/EyeIcon";
+import { SuitcaseIcon } from "./icons";
 
 export enum IconName {
   Email = "email",
@@ -14,6 +15,7 @@ export enum IconName {
   EyeOff = "eyeOff",
   Name = "name",
   Search = "search",
+  Project = "project",
 }
 
 const getIcon = (iconName: IconName) => {
@@ -40,7 +42,11 @@ const getIcon = (iconName: IconName) => {
       );
     case IconName.Search:
       return (
-        <SearchIcon className="text-[#BDBDBD] text:fill-[#757575] absolute top-1/2 -translate-y-1/2 left-5 w-5 h-5" />
+        <SearchIcon className="text-[#BDBDBD] absolute top-1/2 -translate-y-1/2 left-5 w-5 h-5" />
+      );
+    case IconName.Project:
+      return (
+        <SuitcaseIcon className="text-[#212121] dark:text-[#fff] absolute bottom-[22px] left-5 w-5 h-5" />
       );
 
     default:

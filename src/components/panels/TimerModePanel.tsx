@@ -65,12 +65,16 @@ const TimerModePanel = ({ isPanelOpen, onClose }: TimerModePanelProps) => {
                 {description}
               </span>
             </div>
-            {timerMode === mode && <CheckIcon />}
+            {timerMode === mode && <CheckIcon className="text-[#FF6347]" />}
           </div>
         ))}
       </div>
 
-      <PanelButtons onCancel={onClose} onSave={onSave} />
+      <PanelButtons
+        onCancel={onClose}
+        onSave={onSave}
+        texts={["Cancel", "OK"]}
+      />
     </PanelWrapper>
   );
 };

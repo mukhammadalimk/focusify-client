@@ -46,7 +46,11 @@ const StrictModePanel = ({ isPanelOpen, onClose }: StrictModePanelProps) => {
 
       <div className="flex gap-7 flex-col py-5">{renderedToggleRows}</div>
 
-      <PanelButtons onCancel={onCancel} onSave={onSave} />
+      <PanelButtons
+        onCancel={onCancel}
+        onSave={onSave}
+        texts={["Cancel", "OK"]}
+      />
     </PanelWrapper>
   );
 };

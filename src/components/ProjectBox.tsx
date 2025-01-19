@@ -18,7 +18,7 @@ const ProjectBox = ({
 }: ProjectBoxProps) => {
   return (
     <div
-      className="border flex flex-col rounded-lg cursor-pointer max-h-[98px] min-w-[163px] p-2.5 gap-1 break_400:p-3 break_400:gap-2 break_500:p-4"
+      className="border flex flex-col rounded-[8px] cursor-pointer max-h-[98px] min-w-[163px] p-2.5 gap-1 break_400:p-3 break_400:gap-2 break_500:p-4"
       style={{ borderColor: color }}
     >
       <div className="flex items-center gap-1 w-full break_400:gap-2">
