@@ -2,7 +2,6 @@
 import { useState } from "react";
 import PomodoroTimer from "./PomodoroTimer";
 import PlayVectorIcon from "@/components/icons/PlayVectorIcon";
-import PomodoroActionMenu from "./PomodoroActionMenu";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
 import TaskCompletedModal from "@/components/modals/TaskCompletedModal";
 
@@ -139,7 +138,7 @@ const MainContent = () => {
         />
       )}
 
-      <div className="flex flex-1 flex-col mt-10 gap-10 items-center justify-between">
+      <div className="flex flex-1 flex-col mt-10 gap-10 items-center">
         <PomodoroTimer
           key={timerKey}
           duration={duration}
@@ -207,8 +206,6 @@ const MainContent = () => {
             />
           )}
         </div>
-
-        <PomodoroActionMenu />
       </div>
     </>
   );
