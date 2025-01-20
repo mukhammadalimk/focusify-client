@@ -7,8 +7,8 @@ import LogoSmallIcon from "@/components/icons/LogoSmallIcon";
 
 const HomePage = () => {
   return (
-    <div className="bg-[#FF6347] flex-1 h-full px-3 md:px-4 pt-3 flex flex-col">
-      <div className="flex justify-between items-center">
+    <div className="bg-[#FF6347] flex-1 h-full px-3 md:px-4 flex flex-col pb-[80px] md:pb-[90px] pt-[80px]">
+      <div className="flex justify-between items-center h-[60px] w-full fixed md:absolute top-0 left-0 px-3 md:px-4 bg-[#FF6347] z-[20]">
         <LogoSmallIcon className="text-white" />
 
         <h4 className="font-bold header-4 md:text-[28px] text-white">
@@ -20,7 +20,7 @@ const HomePage = () => {
         </Link>
       </div>
 
-      <div className="mt-6 flex flex-col flex-1 pb-[80px] md:pb-[95px]">
+      <div className="flex flex-col flex-1">
         <SelectTask />
 
         <MainContent />
