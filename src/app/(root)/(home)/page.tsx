@@ -2,10 +2,10 @@
 import Link from "next/link";
 import MainContent from "./components/MainContent";
 import SelectTask from "@/components/select-task/SelectTask";
-import NotificationIcon from "@/components/icons/NotificationIcon";
 import LogoSmallIcon from "@/components/icons/LogoSmallIcon";
 import PomodoroActionMenu from "./components/PomodoroActionMenu";
 import TopNavbarWrapper from "@/components/TopNavbarWrapper";
+import { NotificationIcon } from "@/components/icons";
 
 const HomePage = () => {
   return (
@@ -36,6 +36,5 @@ const HomePage = () => {
     </div>
   );
 };
-// min-h-[601px] break_400:min-h-[634px] md:min-h-[644px]
 
 export default HomePage;

@@ -7,12 +7,16 @@ import TopNavbarWrapper from "@/components/TopNavbarWrapper";
 import React from "react";
 import GridSection from "./components/GridSection";
 import AddTaskButton from "./components/AddTaskButton";
+import Link from "next/link";
 
 const Manage = () => {
   return (
     <div className="h-screen md:h-[854px] relative">
       <TopNavbarWrapper>
-        <LogoSmallWhiteIcon className="text-[#FF6347]" />
+        <Link href="/">
+          <LogoSmallWhiteIcon className="text-[#FF6347]" />
+        </Link>
+
         <h4 className="font-bold header-4 md:text-[28px]">Focusify</h4>
 
         <ThreeDotsIcon />

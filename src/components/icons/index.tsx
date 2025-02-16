@@ -15,6 +15,7 @@ import CheckSvg from "@/assets/icons/check-icon.svg";
 import XSvg from "@/assets/icons/x-icon.svg";
 import ArrowLeftSvg from "@/assets/icons/arrow-left.svg";
 import SettingsWhiteSvg from "@/assets/icons/settings-white.svg";
+import NotificationSvg from "@/assets/icons/notification.svg";
 
 // Wrapper function to allow all props (className, onClick, etc.)
 // Wrapper function with displayName and full SVGProps support
@@ -43,3 +44,4 @@ export const SuitcaseFillIcon = IconWrapper(SuitcaseFillSvg);
 export const XIcon = IconWrapper(XSvg);
 export const ArrowLeftIcon = IconWrapper(ArrowLeftSvg);
 export const SettingsWhiteIcon = IconWrapper(SettingsWhiteSvg);
+export const NotificationIcon = IconWrapper(NotificationSvg);
