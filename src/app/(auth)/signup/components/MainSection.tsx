@@ -24,7 +24,7 @@ const MainSection = () => {
 
       <Input
         type="text"
-        text="Name"
+        label="Name"
         placeholder="Name"
         id="name"
         iconName={IconName.Name}
@@ -32,7 +32,7 @@ const MainSection = () => {
 
       <Input
         type="email"
-        text="Email"
+        label="Email"
         placeholder="Email"
         id="email"
         iconName={IconName.Email}
@@ -40,7 +40,7 @@ const MainSection = () => {
 
       <Input
         type="password"
-        text="Password"
+        label="Password"
         placeholder="Password"
         id="password"
         iconName={IconName.Lock}

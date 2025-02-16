@@ -1,12 +1,10 @@
 import PanelButtons from "./PanelButtons";
 import { getSavedTimerMode } from "@/utils";
 import PanelHeader from "../panel/PanelHeader";
-import InfinityIcon from "../icons/InfinityIcon";
 import PanelWrapper from "../panel/PanelWrapper";
-import ArrowRightIcon from "../icons/ArrowRightIcon";
 import { LOCAL_STORAGE_KEYS, TimerMode } from "@/types";
 import React, { useCallback, useEffect, useState } from "react";
-import { CheckIcon } from "../icons";
+import { ArrowRightIcon, CheckIcon, InfinityIcon } from "../icons";
 
 // Array of timer modes to iterate over
 const timerModes = [
@@ -17,7 +15,13 @@ const timerModes = [
   },
   {
     mode: TimerMode.Infinity,
-    labels: ["00:00", <InfinityIcon key="infinity" />],
+    labels: [
+      "00:00",
+      <InfinityIcon
+        key="infinity"
+        className="fill-[#212121] dark:fill-white mb-[-1.5px]"
+      />,
+    ],
     description: "Start counting from 0 until stopped manually.",
   },
 ];
@@ -54,7 +58,7 @@ const TimerModePanel = ({ isPanelOpen, onClose }: TimerModePanelProps) => {
             <div>
               <div className="flex items-center gap-1 font-semibold">
                 <h4 className="header-4">{labels[0]}</h4>
-                <ArrowRightIcon />
+                <ArrowRightIcon className="fill-[#212121] dark:fill-white w-6 h-6" />
                 {typeof labels[1] === "string" ? (
                   <h4 className="header-4">{labels[1]}</h4>
                 ) : (

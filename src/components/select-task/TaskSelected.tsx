@@ -1,5 +1,4 @@
-import CancelIcon from "../icons/CancelIcon";
-import CircleEmptyIcon from "../icons/CircleEmptyIcon";
+import { CancelIcon, CircleEmptyIcon } from "../icons";
 
 const TaskSelected = ({ taskTitle }: { taskTitle: string }) => {
   return (

@@ -1,8 +1,7 @@
 import PanelWrapper from "../panel/PanelWrapper";
 import PanelHeader from "../panel/PanelHeader";
-import { FlagIcon } from "lucide-react";
 import { useState } from "react";
-import { CheckIcon } from "../icons";
+import { CheckIcon, FlagIcon } from "../icons";
 import { Priority } from "@/types";
 import { priorities } from "@/data";
 import PanelButtons from "./PanelButtons";

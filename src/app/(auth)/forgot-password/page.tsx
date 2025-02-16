@@ -17,7 +17,7 @@ const ForgotPassword = () => {
 
         <Input
           type="email"
-          text="Your Registered Email"
+          label="Your Registered Email"
           placeholder="Email"
           id="email"
           iconName={IconName.Email}

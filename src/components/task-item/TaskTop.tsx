@@ -1,7 +1,5 @@
 import { TaskItemProps } from "./TaskItem";
-import CircleEmptyIcon from "../icons/CircleEmptyIcon";
-import CircleCheckmarkIcon from "../icons/CircleCheckmarkIcon";
-import { ThreeDotsIcon } from "../icons";
+import { CircleEmptyIcon, ThreeDotsIcon, CircleCheckmarkIcon } from "../icons";
 
 const TaskTop = ({ taskTitle, completed, deleted }: TaskTopProps) => {
   return (

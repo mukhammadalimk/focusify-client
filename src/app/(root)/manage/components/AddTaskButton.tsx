@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import PlusIcon from "@/components/icons/PlusIcon";
 import AddModal from "@/components/modals/AddModal";
 import AddTaskPanel from "@/components/panels/AddTaskPanel";
 import AddProjectOrTagModal from "@/components/modals/AddProjectOrTagModal";
+import { PlusIcon } from "@/components/icons";
 
 const AddTask = () => {
   const [modalOpen, setModalOpen] = useState(false);

@@ -10,16 +10,15 @@ const TasksPanel = ({ isPanelOpen, onClose }: TasksPanelProps) => {
     <PanelWrapper isPanelOpen={isPanelOpen} onClose={onClose}>
       <PanelHeader title="Select Task" withIcon />
 
-      <Input
-        type="text"
-        text="Search task..."
-        placeholder="Search task..."
-        id="select-task"
-        iconName={IconName.Search}
-        withoutLabel
-        inputStyle="font-normal mt-5 mb-4 break_500:my-5"
-        containerStyle="max-w-none w-full"
-      />
+      <div className="mt-5 mb-4 break_500:my-5">
+        <Input
+          type="text"
+          placeholder="Search task..."
+          id="select-task"
+          iconName={IconName.Search}
+          containerStyle="max-w-none w-full"
+        />
+      </div>
 
       <div className="flex gap-4 items-center">
         <span className="whitespace-nowrap font-semibold text-[16px] break_400:text-[18px] body-x-large text-[#9E9E9E]">

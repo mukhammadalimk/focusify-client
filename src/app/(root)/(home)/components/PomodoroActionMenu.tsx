@@ -1,11 +1,10 @@
 import MusicIcon from "@/components/icons/MusicIcon";
-import HourGlassIcon from "@/components/icons/HourGlassIcon";
-import DangerCircleIcon from "@/components/icons/DangerCircleIcon";
 import { useState } from "react";
 import StrictModePanel from "@/components/panels/StrictModePanel";
 import TimerModePanel from "@/components/panels/TimerModePanel";
 import WhiteNoisePanel from "@/components/panels/WhiteNoisePanel";
 import { ModeMenu } from "@/types";
+import { DangerCircleIcon, HourGlassIcon } from "@/components/icons";
 
 const menuItems = [
   {

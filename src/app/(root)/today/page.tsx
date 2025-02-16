@@ -26,12 +26,9 @@ const Today = () => {
 
         <Input
           type="text"
-          text="Add a Task..."
           placeholder="Add a Task..."
           id="add-task"
           iconName={IconName.Plus}
-          withoutLabel
-          inputStyle="font-normal"
           containerStyle="max-w-none my-6"
         />
 

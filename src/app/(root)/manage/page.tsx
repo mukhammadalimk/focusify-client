@@ -26,12 +26,9 @@ const Manage = () => {
         <div className="overflow-y-auto h-full no-scrollbar pb-[130px] md:pb-[140px] pt-[80px] px-3 md:px-4">
           <Input
             type="text"
-            text="Search task..."
             placeholder="Search task..."
             id="search-task"
             iconName={IconName.Search}
-            withoutLabel
-            inputStyle="font-normal"
             containerStyle="max-w-none"
           />
 

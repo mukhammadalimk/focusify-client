@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import TaskSelected from "./TaskSelected";
-import ArrowDownIcon from "../icons/ArrowDownIcon";
 import TasksPanel from "../panels/TasksPanel";
+import { ArrowDownIcon } from "../icons";
 
 const SelectTask = ({ selected = false }: { selected?: boolean }) => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);

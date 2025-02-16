@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import PanelWrapper from "../panel/PanelWrapper";
 import SunIcon from "../icons/SunIcon";
-import FlagIcon from "../icons/FlagIcon";
-import { SuitcaseIcon, TagIcon } from "../icons";
+import { FlagIcon, SuitcaseIcon, TagIcon } from "../icons";
 import PrimaryButton from "../buttons/PrimaryButton";
 import DueDatePanel from "./DueDatePanel";
 import PriorityPanel from "./PriorityPanel";

@@ -29,7 +29,7 @@ const AddProjectOrTagModal = ({ type, onClose }: AddProjectOrTagModalProps) => {
         <div className="overflow-y-auto no-scrollbar h-full pb-[85px] pt-[75px] px-3 md:px-4">
           <Input
             type="text"
-            text={`${type} Name`}
+            label={`${type} Name`}
             placeholder={`${type} Name`}
             id={`${type.toLowerCase()}-name`}
             containerStyle="w-full max-w-none mb-6"

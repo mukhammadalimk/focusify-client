@@ -1,8 +1,8 @@
 import React from "react";
-import ArrowRightVectorIcon from "@/components/icons/ArrowRightVectorIcon";
 import { NotificationItemType } from "@/types";
 import { formatDate } from "@/utils";
 import getRelativeIcon from "./RelativeIcons";
+import { ArrowRightVectorIcon } from "../icons";
 
 const NotificationItem = ({ item }: NotificationItemProps) => {
   return (

@@ -1,13 +1,15 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import EmailIcon from "./icons/EmailIcon";
 import NameIcon from "./icons/NameIcon";
 import SearchIcon from "./icons/SearchIcon";
-import EyeOffIcon from "./icons/EyeOffIcon";
 import LockIcon from "./icons/LockIcon";
-import EyeIcon from "./icons/EyeIcon";
-import { SuitcaseIcon } from "./icons";
-import PlusIcon from "./icons/PlusIcon";
+import {
+  EmailIcon,
+  EyeIcon,
+  EyeOffIcon,
+  PlusIcon,
+  SuitcaseIcon,
+} from "./icons";
 
 export enum IconName {
   Email = "email",
@@ -63,13 +65,12 @@ const getIcon = (iconName: IconName) => {
 
 const Input = ({
   type,
-  text,
+  label,
   placeholder,
   id,
   iconName,
   passwordShown,
   setPasswordShown,
-  withoutLabel,
   inputStyle,
   containerStyle,
 }: InputProps) => {
@@ -80,12 +81,12 @@ const Input = ({
         containerStyle
       )}
     >
-      {!withoutLabel && (
+      {label && (
         <label
           htmlFor={id}
           className="font-semibold text-[18px] leading-[1.6] tracking-[0.2px] ml-[1px]"
         >
-          {text}
+          {label}
         </label>
       )}
 
@@ -94,12 +95,12 @@ const Input = ({
       <input
         type={passwordShown && type === "password" ? "text" : type}
         id={id}
-        aria-label={text}
+        aria-label={label}
         autoCapitalize="off"
         autoCorrect="off"
         placeholder={placeholder}
         className={twMerge(
-          `placeholder-[#9E9E9E] placeholder:font-normal font-semibold body-x-large bg-[#FAFAFA] dark:bg-[#1F222A] h-[65px] pl-[52px] pr-5 py-[18px] outline-none rounded-[10px] border border-[#EEEEEE] dark:border-[#35383F] input-autofill`,
+          `placeholder-[#9E9E9E] placeholder:font-normal font-semibold body-x-large bg-[#ffffff] dark:bg-[#1F222A] h-[65px] pl-[52px] pr-5 py-[18px] outline-none rounded-[10px] border border-[#EEEEEE] dark:border-[#35383F] input-autofill`,
           inputStyle
         )}
       />
@@ -118,13 +119,12 @@ const Input = ({
 
 interface InputProps {
   type: "text" | "email" | "password";
-  text: string;
+  label?: string;
   placeholder: string;
   id: string;
   iconName: IconName;
   passwordShown?: boolean;
   setPasswordShown?: (arg: boolean) => void;
-  withoutLabel?: boolean;
   inputStyle?: string;
   containerStyle?: string;
 }

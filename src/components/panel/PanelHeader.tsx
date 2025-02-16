@@ -1,5 +1,5 @@
 import Divider from "../Divider";
-import PlusIcon from "../icons/PlusIcon";
+import { PlusIcon } from "../icons";
 
 const PanelHeader = ({ title, withIcon }: PanelHeaderProps) => {
   return (

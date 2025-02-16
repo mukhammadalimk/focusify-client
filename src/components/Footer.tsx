@@ -1,8 +1,5 @@
 "use client";
 import { JSX } from "react";
-import CalendarRedIcon from "./icons/CalendarRedIcon";
-import CalendarGrayShadeIcon from "./icons/CalendarGrayShadeIcon";
-import PomodoroWhiteIcon from "./icons/PomodoroWhiteIcon";
 import PomodoroRedIcon from "./icons/PomodorRedIcon";
 import SettingsRedIcon from "./icons/SettingsRedIcon";
 import ManageWhiteIcon from "./icons/ManageWhiteIcon";
@@ -11,7 +8,12 @@ import ReportRedIcon from "./icons/ReportRedIcon";
 import ReportWhiteIcon from "./icons/ReportWhiteIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SettingsWhiteIcon } from "./icons";
+import {
+  CalendarFillIcon,
+  CalendarIcon,
+  PomodoroIcon,
+  SettingsWhiteIcon,
+} from "./icons";
 
 const Footer = () => {
   const pathname = usePathname(); // Get the current path
@@ -60,7 +62,7 @@ const footerItems: FooterItem[] = [
       if (active) {
         return <PomodoroRedIcon className="mx-auto w-6 h-6" />;
       } else {
-        return <PomodoroWhiteIcon className="mx-auto w-6 h-6" />;
+        return <PomodoroIcon className="mx-auto w-6 h-6 text-[#9E9E9E]" />;
       }
     },
     link: "/",
@@ -80,11 +82,9 @@ const footerItems: FooterItem[] = [
     title: "Calendar",
     getIcon: (active: boolean): JSX.Element => {
       if (active) {
-        return <CalendarRedIcon className="mx-auto w-6 h-6" />;
+        return <CalendarFillIcon className="mx-auto w-6 h-6" />;
       } else {
-        return (
-          <CalendarGrayShadeIcon className="mx-auto w-6 h-6 !text-[#fff]" />
-        );
+        return <CalendarIcon className="mx-auto w-6 h-6 text-[#9E9E9E]" />;
       }
     },
     link: "/calendar",
