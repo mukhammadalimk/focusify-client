@@ -20,7 +20,7 @@ const MainSection = () => {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <LoadingModal isModalOpen={isModalOpen} text="Signing you up..." />
+      {isModalOpen && <LoadingModal text="Signing you up..." />}
 
       <Input
         type="text"

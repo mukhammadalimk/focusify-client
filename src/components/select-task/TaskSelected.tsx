@@ -9,11 +9,9 @@ const TaskSelected = ({ taskTitle }: { taskTitle: string }) => {
       <div className="grid items-center justify-between w-full grid-cols-[min-content_1fr_min-content] gap-4">
         <CircleCheckmarkIcon className="w-5 h-5 break_400:w-6 break_400:h-6" />
 
-        <div className="relative overflow-hidden">
-          <span className="font-semibold body-x-large whitespace-nowrap">
-            {taskTitle}
-          </span>
-        </div>
+        <span className="font-semibold body-x-large whitespace-nowrap truncate">
+          {taskTitle}
+        </span>
 
         <CancelIcon className="fill-[#212121] dark:fill-white" />
       </div>

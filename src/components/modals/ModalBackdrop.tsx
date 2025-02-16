@@ -3,22 +3,19 @@ import { motion } from "framer-motion";
 import React, { ReactNode, useEffect } from "react";
 
 const ModalBackdrop: React.FC<ModalBackdropProps> = ({
-  isOpen,
   children,
   containerId,
   onClose,
 }) => {
   useEffect(() => {
-    if (isOpen) {
-      // Add overflow: hidden to the body when modal is open
-      document.body.style.overflow = "hidden";
-    }
+    // Add overflow: hidden to the body when modal is open
+    document.body.style.overflow = "hidden";
 
     // Cleanup function to ensure no lingering styles
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, []);
 
   return (
     <Portal containerId={containerId}>
@@ -37,7 +34,6 @@ const ModalBackdrop: React.FC<ModalBackdropProps> = ({
 };
 
 interface ModalBackdropProps {
-  isOpen: boolean;
   children: ReactNode;
   containerId: string;
   onClose?: () => void;

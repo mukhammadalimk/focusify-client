@@ -5,12 +5,13 @@ import SelectTask from "@/components/select-task/SelectTask";
 import NotificationIcon from "@/components/icons/NotificationIcon";
 import LogoSmallIcon from "@/components/icons/LogoSmallIcon";
 import PomodoroActionMenu from "./components/PomodoroActionMenu";
+import TopNavbarWrapper from "@/components/TopNavbarWrapper";
 
 const HomePage = () => {
   return (
-    <div className="bg-[#FF6347] h-screen md:h-[854px]">
-      <div className="flex justify-between items-center h-[60px] w-full fixed md:absolute top-0 left-0 px-3 md:px-4 bg-[#FF6347] z-[20]">
-        <LogoSmallIcon className="text-white" />
+    <div className="h-screen md:h-[854px]">
+      <TopNavbarWrapper>
+        <LogoSmallIcon className="text-[#FF6347]" />
 
         <h4 className="font-bold header-4 md:text-[28px] text-white">
           Focusify
@@ -19,19 +20,22 @@ const HomePage = () => {
         <Link href="/notifications">
           <NotificationIcon />
         </Link>
-      </div>
+      </TopNavbarWrapper>
 
-      <div className="flex-1 h-full px-3 md:px-4 pb-[80px] md:pb-[90px] pt-[80px] flex flex-col ">
-        <div className="flex flex-col flex-1">
-          <SelectTask />
+      <div className="flex flex-col h-full overflow-y-auto no-scrollbar">
+        <div className="flex-1">
+          <div className="px-3 md:px-4 grid grid-rows-[max-content_1fr_max-content] gap-8 h-full py-[75px] md:pb-[85px]">
+            <SelectTask selected />
 
-          <MainContent />
+            <MainContent />
+
+            <PomodoroActionMenu />
+          </div>
         </div>
-
-        <PomodoroActionMenu />
       </div>
     </div>
   );
 };
+// min-h-[601px] break_400:min-h-[634px] md:min-h-[644px]
 
 export default HomePage;

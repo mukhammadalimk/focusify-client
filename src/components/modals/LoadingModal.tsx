@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import ModalBackdrop from "./ModalBackdrop";
 import LoadingRedIcon from "../icons/LoadingRedIcon";
 
-const LoadingModal = ({ isModalOpen, text }: LoadingModalProps) => {
+const LoadingModal = ({ text }: LoadingModalProps) => {
   return (
-    <ModalBackdrop isOpen={isModalOpen} containerId="home-root">
+    <ModalBackdrop containerId="home-root">
       <motion.div
         className="bg-white dark:bg-[#1F222A] max-w-[440px] min-w-[340px] rounded-xl p-8 text-center z-50"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -21,7 +21,6 @@ const LoadingModal = ({ isModalOpen, text }: LoadingModalProps) => {
 };
 
 interface LoadingModalProps {
-  isModalOpen: boolean;
   text: string;
 }
 

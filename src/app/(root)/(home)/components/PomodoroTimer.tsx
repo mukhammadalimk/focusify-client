@@ -51,7 +51,7 @@ const PomodoroTimer = ({
 
   return (
     <div className="relative">
-      <div className="big-background-cicle"></div>
+      {/* <div className="big-background-cicle"></div> */}
 
       <div className="pomodoro-outer-circle">
         <svg

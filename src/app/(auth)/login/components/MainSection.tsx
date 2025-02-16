@@ -21,7 +21,7 @@ const MainSection = () => {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <LoadingModal isModalOpen={isModalOpen} text="Logging you in..." />
+      {isModalOpen && <LoadingModal text="Logging you in..." />}
 
       <Input
         type="email"

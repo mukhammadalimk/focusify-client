@@ -2,13 +2,9 @@ import { motion } from "framer-motion";
 import ModalBackdrop from "./ModalBackdrop";
 import { AddModalIcon, PaperPlusIcon, SuitcaseIcon, TagIcon } from "../icons";
 
-const AddModal = ({ isModalOpen, onClose, onOpenPanel }: AddModalProps) => {
+const AddModal = ({ onClose, onOpenPanel }: AddModalProps) => {
   return (
-    <ModalBackdrop
-      isOpen={isModalOpen}
-      containerId="ipad-pro-root"
-      onClose={onClose}
-    >
+    <ModalBackdrop containerId="ipad-pro-root" onClose={onClose}>
       <motion.div
         className="w-[185px] h-[202px] rounded-xl z-20 absolute right-5 bottom-[150px] py-5 px-6 will-change-transform"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -56,7 +52,6 @@ const AddModal = ({ isModalOpen, onClose, onOpenPanel }: AddModalProps) => {
 };
 
 interface AddModalProps {
-  isModalOpen: boolean;
   onClose: () => void;
   onOpenPanel: (type: string) => void;
 }

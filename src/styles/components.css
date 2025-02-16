@@ -22,19 +22,19 @@
   }
 
   .big-background-cicle {
-    @apply bg-white dark:bg-[#181A20] absolute h-[800px] w-[800px] break_400:h-[950px] break_400:w-[950px] break_500:h-[1100px] break_500:w-[1100px] break_600:h-[1400px] break_600:w-[1400px] break_700:h-[1400px] break_700:w-[1400px] rounded-full top-[145px] break_400:top-[180px] left-1/2 -translate-x-1/2 z-0;
+    @apply bg-white dark:bg-[#181A20] absolute h-[800px] w-[800px] break_400:h-[950px] break_400:w-[950px] break_500:h-[1100px] break_500:w-[1100px] break_600:h-[1400px] break_600:w-[1400px] break_700:h-[1400px] break_700:w-[1400px] rounded-full top-[145px] break_400:top-[170px] left-1/2 -translate-x-1/2 z-0;
   }
 
   .pomodoro-outer-circle {
-    @apply bg-white dark:bg-[#1F222A] w-[320px] h-[320px] break_400:w-[348px] break_400:h-[348px] transition-all duration-300 rounded-full grid place-items-center shadow-[0px_16px_50px_0px_rgba(4,6,15,0.16)] z-10 relative;
+    @apply bg-white dark:bg-[#1F222A] w-[320px] h-[320px] break_400:w-[348px] break_400:h-[348px] transition-all duration-300 rounded-full grid place-items-center z-10 relative;
   }
 
   .pomdoro-inner-circle {
-    @apply bg-white dark:bg-[#1F222A] w-[280px] h-[280px] break_400:w-[300px] break_400:h-[300px] transition-all duration-300 rounded-full border-[15px] sm:border-[20px] break_400:border-[24px] border-[#FF6347] grid place-items-center z-10;
+    @apply bg-white dark:bg-[#1F222A] flex-shrink-0 w-[280px] h-[280px] break_400:w-[300px] break_400:h-[300px] transition-all duration-300 rounded-full border-[15px] sm:border-[20px] break_400:border-[24px] border-[#FF6347] grid place-items-center z-10;
   }
 
   .select-task {
-    @apply bg-[#FAFAFA] dark:bg-[#1F222A] px-5 py-[18px] rounded-[10px] flex justify-between items-center w-full max-w-[500px] mx-auto relative overflow-hidden h-[69px];
+    @apply bg-[#FAFAFA] dark:bg-[#1F222A] px-5 py-[18px] rounded-[10px] flex justify-between items-center w-full max-w-[500px] mx-auto relative overflow-hidden h-[60px] md:h-[70px];
   }
 
   .notification-icon {

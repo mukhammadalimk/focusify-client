@@ -42,15 +42,15 @@ export default function RootLayout({
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-        ></meta>
+        />
       </head>
       <body
         className={`${playfairDisplay.variable} ${urbanist.variable} ${robotoFlex.variable} antialiased bg-white dark:bg-[#181A20] md:dark:bg-[#47474a]`}
       >
         <ThemeProvider>
-          <div className="min-h-[100vh] grid place-items-center">
+          <main className="min-h-[100vh] grid place-items-center">
             <IpadWrapper>{children}</IpadWrapper>
-          </div>
+          </main>
 
           <div id="home-root"></div>
         </ThemeProvider>

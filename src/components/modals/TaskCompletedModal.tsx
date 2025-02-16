@@ -6,26 +6,20 @@ import IntroTextsBox from "../shared/IntroTextsBox";
 import taskCompletedImage from "@/assets/images/task-completed.png";
 import PanelButtons from "../panels/PanelButtons";
 
-const TaskCompletedModal = ({
-  isModalOpen,
-  onClose,
-  taskName,
-}: TaskCompletedModalProps) => {
+const TaskCompletedModal = ({ onClose, taskName }: TaskCompletedModalProps) => {
   // Play the sound
   useEffect(() => {
-    if (isModalOpen) {
-      const audio = new Audio("/audio/task-completed.wav");
-      setTimeout(() => audio.play(), 300);
+    const audio = new Audio("/audio/task-completed.wav");
+    setTimeout(() => audio.play(), 300);
 
-      return () => {
-        audio.pause(); // Stop audio if the modal is closed before it finishes
-        audio.currentTime = 0; // Reset playback position
-      };
-    }
-  }, [isModalOpen]);
+    return () => {
+      audio.pause(); // Stop audio if the modal is closed before it finishes
+      audio.currentTime = 0; // Reset playback position
+    };
+  }, []);
 
   return (
-    <ModalBackdrop isOpen={isModalOpen} containerId="ipad-pro-root">
+    <ModalBackdrop containerId="ipad-pro-root">
       <motion.div
         className="bg-white dark:bg-[#181A20] w-full h-full text-center z-51 relative"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -62,7 +56,6 @@ const TaskCompletedModal = ({
 };
 
 interface TaskCompletedModalProps {
-  isModalOpen: boolean;
   onClose: () => void;
   taskName: string;
 }

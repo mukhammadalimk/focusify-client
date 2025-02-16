@@ -4,13 +4,11 @@ import TaskSelected from "./TaskSelected";
 import ArrowDownIcon from "../icons/ArrowDownIcon";
 import TasksPanel from "../panels/TasksPanel";
 
-const taskSelected = false;
-
-const SelectTask = () => {
+const SelectTask = ({ selected = false }: { selected?: boolean }) => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   const onOpenHandler = () => {
-    if (taskSelected) return;
+    if (selected) return;
     setIsPanelOpen(true);
   };
 
@@ -25,10 +23,10 @@ const SelectTask = () => {
       )}
 
       <div
-        className={`select-task${taskSelected ? "" : " cursor-pointer"}`}
+        className={`select-task${selected ? "" : " cursor-pointer"}`}
         onClick={onOpenHandler}
       >
-        {taskSelected ? (
+        {selected ? (
           <TaskSelected taskTitle="Create UI/UX for pomodoro app" />
         ) : (
           <>

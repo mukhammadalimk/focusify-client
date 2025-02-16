@@ -7,15 +7,11 @@ import Input, { IconName } from "../Input";
 import { colors } from "@/data";
 import PanelButtons from "../panels/PanelButtons";
 
-const AddProjectOrTagModal = ({
-  isModalOpen,
-  type,
-  onClose,
-}: AddProjectOrTagModalProps) => {
+const AddProjectOrTagModal = ({ type, onClose }: AddProjectOrTagModalProps) => {
   const [selectedColor, setSelectedColor] = useState("");
 
   return (
-    <ModalBackdrop isOpen={isModalOpen} containerId="ipad-pro-root">
+    <ModalBackdrop containerId="ipad-pro-root">
       <motion.div
         className="bg-white dark:bg-[#181A20] z-50 absolute inset-0"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -70,7 +66,6 @@ const AddProjectOrTagModal = ({
 };
 
 interface AddProjectOrTagModalProps {
-  isModalOpen: boolean;
   type: "Tag" | "Project";
   onClose: () => void;
 }

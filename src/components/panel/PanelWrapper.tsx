@@ -1,6 +1,6 @@
 import ModalBackdrop from "../modals/ModalBackdrop";
 import { motion, AnimatePresence } from "framer-motion";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren } from "react";
 
 const panelAnimation = {
   initial: { y: "100%" },
@@ -14,24 +14,8 @@ const PanelWrapper = ({
   onClose,
   children,
 }: PropsWithChildren<PanelWrapperProps>) => {
-  const [isVisible, setIsVisible] = useState(isPanelOpen);
-
-  useEffect(() => {
-    if (isPanelOpen) {
-      setIsVisible(true); // Show the modal immediately when opening
-    } else {
-      // Delay hiding the modal to allow the animation to play
-      const timeout = setTimeout(() => setIsVisible(false), 300); // 300ms matches the CSS animation duration
-      return () => clearTimeout(timeout);
-    }
-  }, [isPanelOpen]);
-
   return (
-    <ModalBackdrop
-      isOpen={isVisible}
-      containerId="ipad-pro-root"
-      onClose={onClose}
-    >
+    <ModalBackdrop containerId="ipad-pro-root" onClose={onClose}>
       <AnimatePresence>
         {isPanelOpen && (
           <motion.div

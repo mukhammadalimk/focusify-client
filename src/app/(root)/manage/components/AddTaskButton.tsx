@@ -31,7 +31,6 @@ const AddTask = () => {
     <>
       {modalOpen && (
         <AddModal
-          isModalOpen={modalOpen}
           onClose={() => setModalOpen(false)}
           onOpenPanel={onOpenPanel}
         />
@@ -47,7 +46,6 @@ const AddTask = () => {
       {panels.projectsPanel && (
         <AddProjectOrTagModal
           type="Project"
-          isModalOpen={panels.projectsPanel}
           onClose={() => onClosePanel("projectsPanel")}
         />
       )}
@@ -55,7 +53,6 @@ const AddTask = () => {
       {panels.tagsPanel && (
         <AddProjectOrTagModal
           type="Tag"
-          isModalOpen={panels.tagsPanel}
           onClose={() => onClosePanel("tagsPanel")}
         />
       )}
